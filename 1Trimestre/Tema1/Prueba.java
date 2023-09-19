@@ -8,7 +8,7 @@ public class Prueba {
         double num1;
         double num2;
 
-        System.out.println("Me llamo David \n");
+        System.out.println("Me llamo Manuel \n");
 
         System.out.print("Inserte un numero: ");
         num1 = sc.nextDouble();
