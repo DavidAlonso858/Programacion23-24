@@ -14,7 +14,7 @@ public class EjercicioAños {
         añoNac = sc.nextInt();
 
         edad = añoAc - añoNac;
-
+        
         System.out.println("Su edad es de: " + edad + " años");
     }
 }
