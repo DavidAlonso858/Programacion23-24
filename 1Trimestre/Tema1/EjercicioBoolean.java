@@ -1,3 +1,4 @@
+
 /*Diseñar un algoritmo que nos indique si podemos salir a la calle. Existen aspectos que in-
 fluirán en esta decisión: si está lloviendo y si hemos terminado nuestras tareas. Solo po-
 dremos salir a la calle si no está lloviendo y hemos finalizado nuestras tareas. Existe una
@@ -12,19 +13,19 @@ public class EjercicioBoolean {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean lluvia, finalTarea, irBiblio, calle;
-        
+
         System.out.println("Esta lloviendo?: ");
-        lluvia= sc.nextBoolean();
-        
+        lluvia = sc.nextBoolean();
+
         System.out.println("He acabado las tareas?: ");
-        finalTarea =sc.nextBoolean();
-        
+        finalTarea = sc.nextBoolean();
+
         System.out.println("Voy a ir a la biblioteca?: ");
         irBiblio = sc.nextBoolean();
 
         calle = !lluvia && finalTarea || irBiblio;
 
-        System.out.println("Se puede ir a la calle: " +calle);
+        System.out.println("Se puede ir a la calle: " + calle);
 
     }
 }
