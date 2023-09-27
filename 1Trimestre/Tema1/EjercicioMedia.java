@@ -10,7 +10,7 @@ public class EjercicioMedia {
         System.out.print("Introduce tu segunda nota: ");
         nota2 = sc.nextInt();
 
-        media = (nota1 + nota2) / 2;
+        media = (nota1 + nota2) / 2.0;
         System.out.println("La media de sus notas será de: " +media);
 
     }
