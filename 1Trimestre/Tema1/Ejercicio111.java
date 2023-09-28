@@ -10,10 +10,11 @@ public class Ejercicio111 {
 
         System.out.println("Introduzca el IVA: ");
         iva = sc.nextDouble();
-        impIva = iva * 0.21;
-        total = baseImponible * iva /100;
+        
+        impIva = (baseImponible * iva) / 100.0;
+        total = baseImponible + impIva;
 
-        System.out.println("El importe del iva es: " +impIva);
-        System.out.println("El importe total es: " +total);
+        System.out.println("El importe del iva es: " + impIva);
+        System.out.println("El importe total es: " + total);
     }
 }
