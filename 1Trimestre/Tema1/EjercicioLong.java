@@ -9,7 +9,7 @@ public class EjercicioLong {
         radio = sc.nextDouble();
 
         longitud = 2 * pi * radio;
-        area = 3.14 * (radio * radio);
+        area = pi * (radio * radio);
 
         System.out.println("La longitud de la circunferencia es : " + longitud +
                 " Y el area es de: " + area);
