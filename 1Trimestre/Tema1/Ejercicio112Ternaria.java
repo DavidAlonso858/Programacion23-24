@@ -8,7 +8,7 @@ import java.util.Scanner;
  * para que la division entre 7 sea exacta 
  * y por tanto multiplo)
  */
-public class Ejercicio112 {
+public class Ejercicio112Ternaria {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int entero, resto, suma;
@@ -18,6 +18,8 @@ public class Ejercicio112 {
 
         resto = entero % 7;
         suma = 7 - resto;
+
+        suma = suma == 7 ? 0 : suma; //ternaria importante//
 
         System.out.println("Hay que sumarle: " + suma);
     }
