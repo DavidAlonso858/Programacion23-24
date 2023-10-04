@@ -18,7 +18,8 @@ public class Refuerzo12 {
         notaFinal=sc.nextDouble();
 
         nota2 = (notaFinal - nota1*0.40) /0.60;
-        mensajeSalida = (nota2>10) ? " No puedes alcanzar esa nota" :
+        
+        mensajeSalida = (nota2<0) || (nota2>10) ? " No puedes alcanzar esa nota" :
                                      ("\nNecesitas sacar la siguiente nota en el segundo examen: "+nota2); 
 
         System.out.println(mensajeSalida);
