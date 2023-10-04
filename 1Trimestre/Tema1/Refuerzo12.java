@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Refuerzo12 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String mensajeSalida;
         double nota1, nota2, notaFinal;
         
         System.out.println("Introduzca la primera nota: ");
@@ -17,7 +18,9 @@ public class Refuerzo12 {
         notaFinal=sc.nextDouble();
 
         nota2 = (notaFinal - nota1*0.40) /0.60;
-        
-        System.out.println(" \nNecesitas sacar la siguiente nota en el segundo examen: "+nota2);
+        mensajeSalida = (nota2>10) ? " No puedes alcanzar esa nota" :
+                                     ("\nNecesitas sacar la siguiente nota en el segundo examen: "+nota2); 
+
+        System.out.println(mensajeSalida);
     }
 }
