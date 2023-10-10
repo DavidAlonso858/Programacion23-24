@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio212 {
+public class EjercicioDNI {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num, letra = 0;
@@ -8,7 +8,7 @@ public class Ejercicio212 {
         System.out.println("Introduce el numero de 8 cifras de tu dni: ");
         num = sc.nextInt();
 
-        if (num > 9999999) {
+        if (num > 99999999) {
             System.out.println("Te has equivocado, introduce el numero de 8 cifras de tu dni: ");
             num = sc.nextInt();
         } else {
