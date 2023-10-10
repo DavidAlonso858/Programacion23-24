@@ -8,7 +8,7 @@ public class EjercicioDNI {
         System.out.println("Introduce el numero de 8 cifras de tu dni: ");
         num = sc.nextInt();
 
-        if (num > 99999999) {
+        if (num > 99999999 || num<10000000) {
             System.out.println("Te has equivocado, introduce el numero de 8 cifras de tu dni: ");
             num = sc.nextInt();
         } else {
