@@ -11,7 +11,7 @@ public class Repaso5 {
         System.out.println("Ahora introduzca el valor de b: ");
         b=sc.nextDouble();
 
-        if(a>0){
+        if(a!=0 && b!=0){
             x=-b/a;
             System.out.println("x = "+x);
         }else{
