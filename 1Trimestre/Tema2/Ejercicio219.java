@@ -9,8 +9,9 @@ public class Ejercicio219 {
         System.out.println("Introduzca los grados del angulo: ");
         grados = sc.nextInt();
 
-        if (grados < 0 || grados > 360) {
-            grados %= 360;
+        grados %= 360;
+        if (grados < 0) {
+            grados += 360;
         }
         radiales = grados * (Math.PI / 180);
         System.out.println(grados + " grados son " + radiales + " radiales");

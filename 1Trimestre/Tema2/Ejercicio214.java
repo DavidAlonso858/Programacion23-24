@@ -16,6 +16,7 @@ public class Ejercicio214 {
             System.out.println("Formato invalido");
         } else {
             switch (numeroIntroducido) {
+                case 10 -> numerosUnicos = "diez";
                 case 11 -> numerosUnicos = "once";
                 case 12 -> numerosUnicos = "doce";
                 case 13 -> numerosUnicos = "trece";
@@ -50,7 +51,7 @@ public class Ejercicio214 {
             }
 
             if (numeroIntroducido >= 11 && numeroIntroducido <= 19
-                    || numeroIntroducido == 20) {
+                    || numeroIntroducido == 20 || numeroIntroducido == 10) {
                 System.out.println(numerosUnicos);
 
             } else if (numeroIntroducido >= 21 && numeroIntroducido <= 29) {

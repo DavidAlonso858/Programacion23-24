@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio218 {
+public class Ejercicio218CharRandom {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int sum, ale1, ale2, resultado = 0, operacion;
