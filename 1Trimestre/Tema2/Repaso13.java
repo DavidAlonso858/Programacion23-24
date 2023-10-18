@@ -13,6 +13,7 @@ public class Repaso13 {
 
         System.out.println("Introduzca el tercer numero: ");
         num3 = sc.nextInt();
+        
         if (num1 >= num2 && num2 >= num3) {
             System.out.println(num1 + " , " + num2 + " , " + num3);
         } else if (num1 >= num3 && num3 >= num2) {
