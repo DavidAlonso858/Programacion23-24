@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Repaso25 {
+public class Repaso24 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int cargo, diasViaje, estado, sueldoBase = 0, dieta; 
