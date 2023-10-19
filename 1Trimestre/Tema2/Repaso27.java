@@ -4,7 +4,7 @@ public class Repaso27 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String sabor, chocolate, nata, nombre;
-        double costeSabor = 0, costeTotal = 0, costeNata = 0, costeNombre = 0;
+        double costeSabor = 0, costeNata = 0, costeNombre = 0;
 
         System.out.print("Elije un sabor (manzana, fresa o chocolate): ");
         sabor = sc.next();
