@@ -21,7 +21,7 @@ public class RepasoExtra2 {
                 resultado = unidad * 100 + decena * 10 + centena;
             }
 
-            System.out.println(numero + " -> " + resultado);
+            System.out.println(numero + " -> " + Math.abs(resultado));
         } else {
             System.out.println("El número introducido no cumple el formato requerido");
         }
