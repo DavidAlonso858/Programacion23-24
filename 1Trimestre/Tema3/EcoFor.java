@@ -5,8 +5,12 @@ public class EcoFor {
         Scanner sc = new Scanner(System.in);
         int num;
 
-        System.out.println("Introduzca el numero de veces: ");
+        System.out.print("Introduzca el numero de veces: ");
+        num=sc.nextInt();
 
+        for (int i =1; i <=num ; i++) {
+            System.out.println("Eco...");
+        }
 
     }
 }
