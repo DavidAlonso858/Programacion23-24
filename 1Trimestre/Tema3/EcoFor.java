@@ -6,9 +6,9 @@ public class EcoFor {
         int num;
 
         System.out.print("Introduzca el numero de veces: ");
-        num=sc.nextInt();
+        num = sc.nextInt();
 
-        for (int i =1; i <=num ; i++) {
+        for (int i = 1; i <= num; i++) {
             System.out.println("Eco...");
         }
 
