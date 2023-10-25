@@ -9,7 +9,7 @@ public class Ejercicio312 {
             System.out.print("Intorduzca la nota: ");
             nota=sc.nextInt();
             if(nota<=4){
-                suspensos+=nota;
+                suspensos++;
             }
         }
         System.out.println("El numero de suspensos es: "+suspensos);
