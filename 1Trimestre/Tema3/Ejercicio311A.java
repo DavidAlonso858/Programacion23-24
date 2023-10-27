@@ -14,6 +14,7 @@ public class Ejercicio311A {
         for (; numero > 0; numero /= 2) {
             digito = numero % 2;
             binario = digito + binario;
+
         }
         System.out.println("El binario es: " + binario);
     }
