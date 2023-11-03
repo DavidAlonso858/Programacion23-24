@@ -14,13 +14,13 @@ public class Ejercicio316Triangulo {
             numFilas = sc.nextInt();
         } while (numFilas < 0);
 
-        for (altura = 0; altura <= numFilas; altura++) {
-            for (int blancos = 0; blancos <= numFilas - altura; blancos++) {
+        for (altura = 1; altura <= numFilas; altura++) {
+            for (int blancos = 1; blancos <= numFilas - altura; blancos++) {
                 System.out.print(" ");
             }
 
-            for (asteriscos = 1; asteriscos <= (altura * 2) +1 ; asteriscos++) {
-                System.out.print("*");
+            for (asteriscos = 1; asteriscos <= altura; asteriscos++) {
+                System.out.print("* ");
             }
             System.out.println();
         }
