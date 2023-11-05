@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Ejercicio318MinMaxComunDivisor {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a, b, mayor, maxComunDivisor = 0, minComunDivisor = 0;
+        int a, b, mayor, maxComunDivisor = 0, minComunMultiplo = 0;
 
         do {
             System.out.print("Introduce el numero a: ");
@@ -24,10 +24,10 @@ public class Ejercicio318MinMaxComunDivisor {
                 }
             }
         }
-        minComunDivisor = a * b / maxComunDivisor;
+        minComunMultiplo = a * b / maxComunDivisor;
 
         System.out.println("\nEl maximo comun divisor es: " + maxComunDivisor);
-        System.out.println("\nEl minimo comun divisor es: " + minComunDivisor);
+        System.out.println("\nEl minimo comun multiplo es: " + minComunMultiplo);
 
     }
 
