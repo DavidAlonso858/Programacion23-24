@@ -9,7 +9,7 @@ public class Ejercicio319 {
             numNat = sc.nextInt();
         } while (numNat < 0);
 
-        for (int aprox = 0; aprox <= numNat; aprox++) {
+        for (int aprox = 0; result <= numNat; aprox++) {
             result = (int) Math.pow(aprox, 2);
             if (result <= numNat) {
                 valor = aprox;
