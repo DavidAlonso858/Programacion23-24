@@ -26,7 +26,7 @@ public class Refuerzo20TrianguloHueco {
             }
             System.out.println();
         }
-        for (int base = 0; base < numFilas+1; base++) {
+        for (int base = 0; base < numFilas + 1; base++) {
             System.out.print(caracter + " ");
         }
 
