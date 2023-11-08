@@ -8,7 +8,7 @@ public class Refuerzo9 {
         System.out.print("Introduzca un numero: ");
         num = sc.nextInt();
 
-        while (num > 0) {
+        while (num != 0) {
             cifra = num % 10;
             System.out.print(cifra + ", ");
             num = num / 10;

@@ -15,7 +15,7 @@ public class Refuerzo10 {
                 todos += num;
             }
         } while (num >= 0);
-        media = todos / veces;
+            media = todos / veces;
         System.out.println("La media es: " + media);
     }
 }

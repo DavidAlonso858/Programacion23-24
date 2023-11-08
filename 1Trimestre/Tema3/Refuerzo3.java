@@ -6,9 +6,9 @@ public class Refuerzo3 {
         int multiplos = 0;
 
         do {
-            multiplos += 5;
             System.out.println(multiplos);
-        } while (multiplos < 100);
+            multiplos += 5;
+        } while (multiplos <= 100);
 
     }
 }
