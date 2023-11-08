@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Refuerzo25 {
+public class Refuerzo25CifraInverso {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numero, cifra = 0, inverso = 0;

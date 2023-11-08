@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class Refuerzo26 {
+public class Refuerzo26PosicionLongitud {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int numero, digito, posicion = 0, digito2 = 0;
+        int numero, aux = 0, digito, posicion = 0, digito2 = 0;
 
         System.out.print("Introduzca un numero: ");
         numero = sc.nextInt();
@@ -11,13 +11,26 @@ public class Refuerzo26 {
         System.out.print("Introduzca un digito de ese numero: ");
         digito = sc.nextInt();
 
-        while (numero != 0) {
-            digito2 = numero % 10;
+        if (numero == 0) {
+            System.out.println("La posicion es 1");
+        }
+
+        aux = numero;
+
+        while (aux != 0) {// longitud
+            aux /= 10;
             posicion++;
-            numero /= 10;
+        }
+
+        aux = numero;
+
+        while (aux != 0) {// coincidencia digitoss
+            digito2 = aux % 10;
             if (digito2 == digito) {
                 System.out.println("La posicion de ese digito es: " + posicion);
             }
+            aux /= 10;
+            posicion--;
         }
     }
 }
