@@ -13,7 +13,7 @@ public class Refuerzo20TrianguloHueco {
             caracter = sc.next().charAt(0);
         } while (numFilas <= 0);
 
-        for (int altura = 1; altura <= numFilas; altura++) {
+        for (int altura = 1; altura < numFilas; altura++) {
             for (int blanco = altura; blanco < numFilas; blanco++) {
                 System.out.print(" ");
             }
@@ -26,5 +26,9 @@ public class Refuerzo20TrianguloHueco {
             }
             System.out.println();
         }
+        for (int base = 0; base < numFilas+1; base++) {
+            System.out.print(caracter + " ");
+        }
+
     }
 }
