@@ -13,7 +13,7 @@ public class Refuerzo35 {
         }else{
             for (int altura = 0; altura < numFilas; altura++) {
                 for (int pintar = 0; pintar < numFilas; pintar++) {
-                    if (pintar == altura || pintar == (numFilas - 1 - altura)) {
+                    if (pintar == altura || pintar == (numFilas - 1 - altura)) {//diagonales
                         System.out.print("*");
                     } else {
                         System.out.print(" ");
