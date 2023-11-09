@@ -5,7 +5,7 @@ public class Refuerzo35 {
         Scanner sc = new Scanner(System.in);
         int numFilas;
 
-        System.out.println("Intruduzca la altura impar y mayor o igual que 3: ");
+        System.out.print("Intruduzca la altura impar y mayor o igual que 3: ");
         numFilas=sc.nextInt();
         
         if (numFilas<3 || numFilas%2==0) {
