@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class RepasoExtra {
+public class RefuerzoExtra {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numero, digito, sumDig = 0;
