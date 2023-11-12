@@ -13,7 +13,7 @@ public class Refuerzo25CifraInverso {
         if (numero >= 0 && numero < 10) {
             System.out.println("El inverso es el mismo numero");
         } else {
-            System.out.println("El inverso es: ");
+            System.out.print("El inverso es: ");
             while (numero > 0) {
                 cifra = numero % 10;
                 System.out.print(cifra);
