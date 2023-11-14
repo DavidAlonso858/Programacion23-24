@@ -5,14 +5,14 @@ public class Refuerzo49 {
         Scanner sc = new Scanner(System.in);
         int numero, cuentaNumeros = 0, suma = 0, minimo = Integer.MAX_VALUE, maximo = Integer.MIN_VALUE;
         boolean primo;
-        
+
         do {
             System.out.print("Por favor introduzca un numero entero positivo. Para terminar, introduzca un  primo: ");
             numero = sc.nextInt();
 
             primo = true;
 
-            for (int rangoPrimo = 2; rangoPrimo < numero; rangoPrimo++) {
+            for (int rangoPrimo = 2; rangoPrimo < numero && primo; rangoPrimo++) {
                 if (numero % rangoPrimo == 0) {
                     primo = false;
                 }
