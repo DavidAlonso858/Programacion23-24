@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ejercicio312A {
+public class Ejercicio312ABinario {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numero, digito=0, binario, exp=0;
