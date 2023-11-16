@@ -6,12 +6,13 @@ public class ExamenTema3Ejercicio2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int mayor = Integer.MIN_VALUE, menor = Integer.MAX_VALUE, segundoNumeroMenor = Integer.MAX_VALUE, numero, longitud = 0, digitoPar, digitoImpar, posicion = 1, digitoBelen;
+        int mayor = Integer.MIN_VALUE, menor = Integer.MAX_VALUE, segundoNumeroMenor = Integer.MAX_VALUE, numero,
+                longitud = 0, digitoPar, digitoImpar, posicion = 1, digitoBelen;
 
         do {
             System.out.print("Introduzca un numero positivo de al menos tres cifras: ");
             numero = sc.nextInt();
-        } while (numero < 0 || numero < 99);
+        } while (numero < 0 || numero <= 99); // correcion del = porque si no el 99 si sale
 
         int numTemporal = numero;
 
@@ -19,7 +20,7 @@ public class ExamenTema3Ejercicio2 {
             numTemporal /= 10;
             longitud++;
         }
-
+        
         if (longitud % 2 == 0) {
             int aux = numero;
             while (aux > 0) {
