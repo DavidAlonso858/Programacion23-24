@@ -1,18 +1,6 @@
 import java.util.Scanner;
 
 public class Ejercicio42 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int num1, num2;
-
-        System.out.print("Introduzca un numero: ");
-        num1 = sc.nextInt();
-
-        System.out.print("Introduzca otro numero: ");
-        num2 = sc.nextInt();
-
-        numerosCompredidos(num1, num2);
-    }
 
     public static void numerosCompredidos(int num1Pasado, int num2Pasado) {
         int mayor, menor;
@@ -26,6 +14,19 @@ public class Ejercicio42 {
         for (; menor <= mayor; menor++) {
             System.out.println(menor);
         }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num1, num2;
+
+        System.out.print("Introduzca un numero: ");
+        num1 = sc.nextInt();
+
+        System.out.print("Introduzca otro numero: ");
+        num2 = sc.nextInt();
+
+        numerosCompredidos(num1, num2);
     }
 
 }
