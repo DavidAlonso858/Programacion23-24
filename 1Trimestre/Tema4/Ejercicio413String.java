@@ -1,17 +1,18 @@
 import java.util.Scanner;
 
-public class Ejercicio413 {
+public class Ejercicio413String {
 
-    public static int muestraPares(int n) {
+    public static String muestraPares(int n) {
         int contador;
         int mostrar = 1;
+        String cadena = "";
 
         System.out.println("Los " + n + " primeros numeros pares son: ");
-        for (contador = 0; mostrar < n; contador += 2) {
-            System.out.println(contador);
+        for (contador = 0; mostrar <= n; contador += 2) {
+            cadena += " - " + contador;
             mostrar++;
         }
-        return contador;
+        return cadena;
 
     }
 
