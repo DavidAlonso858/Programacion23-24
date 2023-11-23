@@ -99,38 +99,43 @@ public class Biblioteca {
     }
 
     public static int quitaPorDetras(int numero, int detrasDigitos) {
-        int aux = numero, nuevoNumero = 0;
-        boolean encontrado = false;
-
-        for (int contPosicion = 0; contPosicion < digitos(numero) && !encontrado; contPosicion++) {
-            if (contPosicion == detrasDigitos) {
-                nuevoNumero = aux;
-                encontrado = true;
-            }
-
-            aux /= 10;
-        }
-        return nuevoNumero;
+        return numero / (int) Math.pow(10, detrasDigitos);
     }
 
     public static int quitaPorDelante(int numero, int delanteDigitos) {
-        int aux = voltea(numero), nuevoNumero = 0;
-        boolean encontrado = false;
+        int digitos = digitos(numero);
+        return numero % (int) Math.pow(10, digitos - delanteDigitos);
+    }
 
-        for (int contPosicion = 0; contPosicion < digitos(numero) && !encontrado; contPosicion++) {
-            if (contPosicion == delanteDigitos) {
-                nuevoNumero = aux;
-                encontrado = true;
-            }
+    public static int pegaPorDetras(int numero, int añadeDetrasDigito) {
 
-            aux /= 10;
-        }
-        return nuevoNumero;
+        return numero = (numero * 10) + añadeDetrasDigito;
+    }
+
+    public static int pegaPorDelante(int numero, int añadeDelanteDigito) {
+
+        int longitudNum = digitos(numero);
+        return numero += (añadeDelanteDigito * potencia(10, longitudNum));
+    }
+
+    public static int trozoDeNumero(int numero) {
+        int posicionFinal = digitos(numero);
+        int posicionInicial = 1;
+        int posiconAplicada = posicionFinal - 2;
+
+        int numeroSinDelante = quitaPorDelante(numero, posicionInicial);
+        return quitaPorDetras(numeroSinDelante, posiconAplicada);
+    }
+
+    public static int juntaNumeros(int numero, int numero2) {
+
+        return (numero * (int) (potencia(10, digitos(numero2)))) + numero2;
     }
 
     public static void main(String[] args) {
-        int numero = 17, base = 2, exponente = 3, posicion = 0, digito = 1,
-                detrasDigitos = 1, delanteDigitos=1;
+        int numero = 179, base = 2, exponente = 3, posicion = 0, digito = 5,
+                detrasDigitos = 1, delanteDigitos = 1, añadeDetrasDigito = 8,
+                añadeDelanteDigito = 8, numero2 = 77;
 
         System.out.println("Es primo: " + esPrimo(numero));
         System.out.println("Es capicua: " + esCapicua(numero));
@@ -140,7 +145,11 @@ public class Biblioteca {
         System.out.println("Volteado es: " + voltea(numero));
         System.out.println(digitoN(numero, posicion));
         System.out.println(posicionDigito(numero, digito));
-        System.out.println("Al quitarle por detras se queda: "+quitaPorDetras(numero, detrasDigitos));
-        System.out.println("Al quitarle por delante se queda: "+quitaPorDelante(numero, delanteDigitos));
+        System.out.println("Al quitarle por detras se queda: " + quitaPorDetras(numero, detrasDigitos));
+        System.out.println("Al quitarle por delante se queda: " + quitaPorDelante(numero, delanteDigitos));
+        System.out.println("Se añade digito por detras: " + pegaPorDetras(numero, añadeDetrasDigito));
+        System.out.println("Se añade digito por delante: " + pegaPorDelante(numero, añadeDelanteDigito));
+        System.out.println("Al juntar los dos numeros sale: " + juntaNumeros(numero, numero2));
+        System.out.println("El trozo del numero es: " + trozoDeNumero(numero));
     }
 }
