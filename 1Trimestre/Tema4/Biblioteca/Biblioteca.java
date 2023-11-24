@@ -5,7 +5,7 @@ public class Biblioteca {
     public static boolean esPrimo(int numero) {
         boolean primo = true;
 
-        for (int cont = 2; cont < numero && primo; cont++) {
+        for (int cont = 2; cont <= numero / 2 && primo; cont++) {
             if (numero % cont == 0) {
                 primo = false;
             }
@@ -47,8 +47,8 @@ public class Biblioteca {
     }
 
     public static int digitos(int numero) {
-        int aux = numero, longitud = 0;
-        while (aux > 0) {
+        int aux = numero, longitud = 1; // para que cuente el 0
+        while (aux > 9) { // para que cuente el 0
             aux /= 10;
             longitud++;
         }

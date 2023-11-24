@@ -3,15 +3,6 @@ import java.util.Scanner;
 import Biblioteca.Biblioteca;
 
 public class Refuerzo17 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int binario;
-
-        System.out.print("Introduzca un numero binario: ");
-        binario = sc.nextInt();
-
-        System.out.println(("El decimal de " + binario + " es " + binarioDecimal(binario)));
-    }
 
     public static int binarioDecimal(int binario) {
         int decimal = 0, aux = binario, cifra, longitud = 0;
@@ -27,5 +18,17 @@ public class Refuerzo17 {
             binario /= 10;
         }
         return decimal;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int binario;
+
+        do {
+            System.out.print("Introduzca un numero binario: ");
+            binario = sc.nextInt();
+        } while (binario < 0);
+
+        System.out.println(("El decimal de " + binario + " es " + binarioDecimal(binario)));
     }
 }
