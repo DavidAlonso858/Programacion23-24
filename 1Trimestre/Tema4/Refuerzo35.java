@@ -1,17 +1,6 @@
 import java.util.Scanner;
 
 public class Refuerzo35 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int numero;
-        do {
-
-            System.out.println("Introduzca un numero: ");
-            numero = sc.nextInt();
-        } while (numero < 0);
-
-        System.out.println(convierteEnPalotes(numero));
-    }
 
     public static String convierteEnPalotes(int numero) {
         int cifra;
@@ -36,4 +25,17 @@ public class Refuerzo35 {
         }
         return palillos;
     }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int numero;
+
+        do {
+            System.out.print("Introduzca un numero: ");
+            numero = sc.nextInt();
+        } while (numero < 0);
+
+        System.out.println(convierteEnPalotes(numero));
+    }
+
 }
