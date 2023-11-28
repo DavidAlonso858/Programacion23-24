@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Refuerzo18 {
-    
+
     public static String decimalBinario(int decimal) {
         int digito;
         String binario = "";
@@ -18,7 +18,7 @@ public class Refuerzo18 {
         int decimal;
 
         do {
-            System.out.println("Introduzca un numero: ");
+            System.out.print("Introduzca un numero: ");
             decimal = sc.nextInt();
         } while (decimal < 0);
 
