@@ -8,20 +8,26 @@ public class Refuerzo35 {
 
         for (; numero > 0; numero /= 10) {
             cifra = numero % 10;
-            switch (cifra) {
-                case 0 -> palillos = " -" + palillos;
-                case 1 -> palillos = "|-" + palillos;
-                case 2 -> palillos = "||-" + palillos;
-                case 3 -> palillos = "|||-" + palillos;
-                case 4 -> palillos = "||||-" + palillos;
-                case 5 -> palillos = "|||||-" + palillos;
-                case 6 -> palillos = "||||||-" + palillos;
-                case 7 -> palillos = "|||||||-" + palillos;
-                case 8 -> palillos = "||||||||-" + palillos;
-                case 9 -> palillos = "|||||||||-" + palillos;
+            palillos = palillos(cifra) + palillos;
+        }
+        return palillos;
+    }
 
-                default -> palillos = "error en el numero";
-            }
+    public static String palillos(int cifra) {
+        String palillos = "";
+        switch (cifra) {
+            case 0 -> palillos = " -";
+            case 1 -> palillos = "|-";
+            case 2 -> palillos = "||-";
+            case 3 -> palillos = "|||-";
+            case 4 -> palillos = "||||-";
+            case 5 -> palillos = "|||||-";
+            case 6 -> palillos = "||||||-";
+            case 7 -> palillos = "|||||||-";
+            case 8 -> palillos = "||||||||-";
+            case 9 -> palillos = "|||||||||-";
+
+            default -> palillos = "error en el numero";
         }
         return palillos;
     }
