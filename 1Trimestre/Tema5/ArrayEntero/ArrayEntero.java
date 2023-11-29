@@ -1,3 +1,4 @@
+package ArrayEntero;
 public class ArrayEntero {
 
     public static void pintarTabla(int[] tabla) {
