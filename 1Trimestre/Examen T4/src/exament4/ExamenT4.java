@@ -84,18 +84,13 @@ public class ExamenT4 {
     public static long sumaPosiciones(long numero, int posicionInicial) {
         long longitud = longitud(numero);
         long cifra, resultado = 0;
-        int posicionTrabajada = posicionInicial;
 
-        while (posicionTrabajada < longitud) {
-            posicionTrabajada += 2;
-        }
-        for (; longitud >= posicionInicial; longitud--) {
+        for (; longitud >= 1; longitud--) {
             cifra = numero % 10;
-            if (longitud == posicionInicial || longitud == posicionTrabajada) {
+            if (longitud % 2 == posicionInicial % 2) {
                 resultado += cifra;
             }
             numero /= 10;
-            posicionTrabajada -= 2;
         }
         return resultado;
     }
