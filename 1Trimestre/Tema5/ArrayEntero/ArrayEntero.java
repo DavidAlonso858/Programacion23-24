@@ -1,4 +1,5 @@
 package ArrayEntero;
+
 public class ArrayEntero {
 
     public static void pintarTabla(int[] tabla) {
@@ -9,9 +10,9 @@ public class ArrayEntero {
     }
 
     public static void pintarTabla(int[] tabla, int desde, int hasta) {
-         for (int i = desde; i <= hasta; i++) {
-            System.out.println(tabla[i]);    
-            
+        for (int i = desde; i <= hasta; i++) {
+            System.out.println(tabla[i]);
+
         }
     }
 
