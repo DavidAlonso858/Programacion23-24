@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Array {
@@ -9,6 +10,8 @@ public class Array {
 
         double pruebaDouble[] = { 3.1, 3.56, 3.45, 3.2, 3.9 }; // recomendable ordenada para las busquedas
 
+        System.out.println(Arrays.toString(pruebaDouble));
+        
         System.out.println(prueba);
         System.out.println(pruebaBoolean);
         System.out.println(pruebaDouble);

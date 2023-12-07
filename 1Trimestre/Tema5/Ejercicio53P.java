@@ -1,19 +1,6 @@
 import java.util.Scanner;
 
 public class Ejercicio53P {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[] n = new int[5];
-
-        for (int i = 0; i < n.length; i++) {
-            System.out.print("Introduzca numero: ");
-            n[i] = sc.nextInt();
-        }
-
-        System.out.println("\nLa media de los numeros positivos es: " + mediaPositivos(n));
-        System.out.println("La media de los numeros negativos es: " + mediaNegativos(n));
-        System.out.println("El numero de ceros es: " + ceros(n));
-    }
 
     public static int mediaPositivos(int[] n) {
         int suma = 0, media, contPos = 0;
@@ -59,5 +46,19 @@ public class Ejercicio53P {
         }
 
         return contCeros;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] n = new int[5];
+
+        for (int i = 0; i < n.length; i++) {
+            System.out.print("Introduzca numero: ");
+            n[i] = sc.nextInt();
+        }
+
+        System.out.println("\nLa media de los numeros positivos es: " + mediaPositivos(n));
+        System.out.println("La media de los numeros negativos es: " + mediaNegativos(n));
+        System.out.println("El numero de ceros es: " + ceros(n));
     }
 }
