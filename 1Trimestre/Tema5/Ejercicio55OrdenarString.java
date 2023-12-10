@@ -1,20 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ejercicio55 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int longitud, fin = 100;
-
-        do {
-            System.out.print("Introduzca la longitud de pares: ");
-            longitud = sc.nextInt();
-        } while (longitud <= 0);
-
-        for (int pares : rellenaPares(longitud, fin)) {
-            System.out.print(pares + " ");
-        }
-    }
+public class Ejercicio55OrdenarString {
 
     public static int aleatorio(int fin) {
         int parAleatorio;
@@ -34,6 +21,18 @@ public class Ejercicio55 {
         Arrays.sort(tablaPares);
         System.out.print("\nLa tabla ordenada de pares es: ");
         return tablaPares;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int longitud, fin = 100;
+
+        do {
+            System.out.print("Introduzca la longitud de pares: ");
+            longitud = sc.nextInt();
+        } while (longitud <= 0);
+
+        System.out.println(Arrays.toString(rellenaPares(longitud, fin)));
     }
 
 }
