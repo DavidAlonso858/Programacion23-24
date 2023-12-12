@@ -30,4 +30,20 @@ public class ArrayEntero {
             tabla[i] = valor;
         }
     }
+
+    public static void ordenar(int[] tabla) {
+        int temp;
+        for (int i = 0; i < tabla.length - 1; i++) {
+            for (int j = 0; j < tabla.length - 1 - i; j++) {
+                if (tabla[j] > tabla[j + 1]) {
+                    temp = tabla[j];
+                    tabla[j] = tabla[j + 1];
+                    tabla[j + 1] = temp;
+                }
+            }
+        }
+        for (int recorrido : tabla) {
+            System.out.print(recorrido + " ");
+        }
+    }
 }
