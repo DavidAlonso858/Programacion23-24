@@ -31,7 +31,7 @@ public class ArrayEntero {
         }
     }
 
-    public static void ordenar(int[] tabla) {
+    public static void ordenar(int[] tabla) { // Burbuja
         int temp;
         for (int i = 0; i < tabla.length - 1; i++) {
             for (int j = 0; j < tabla.length - 1 - i; j++) {
@@ -44,6 +44,33 @@ public class ArrayEntero {
         }
         for (int recorrido : tabla) {
             System.out.print(recorrido + " ");
+        }
+    }
+
+    public static void insercionDirecta(int[] array) { // Insercion Directa
+        int elemento, j;
+        for (int i = 1; i < array.length; i++) { // la j trabaja con la posicion 0
+            elemento = array[i];
+            j = i - 1;
+            for (; j >= 0 && array[j] > elemento; j--) {
+                array[j + 1] = array[j];
+            }
+            array[j + 1] = elemento; // le asigna la posicion sobrante al numero
+        }
+    }
+
+    public static void seleccionDirecta(int[] array) { // Seleccion Directa
+        int menor, temporal;
+        for (int i = 0; i < array.length - 1; i++) {
+            menor = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < array[menor]) {
+                    menor = j;
+                }
+            }
+            temporal = array[menor];
+            array[menor] = array[i];
+            array[i] = temporal;
         }
     }
 }

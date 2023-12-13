@@ -1,5 +1,7 @@
 package ArrayEntero;
 
+import java.util.Arrays;
+
 public class MainArrayEntero {
     public static void main(String[] args) {
         int[] prueba = {6, 5, 4, 3, 2, 1 };
@@ -12,8 +14,13 @@ public class MainArrayEntero {
          * System.out.println();
          * ArrayEntero.pintarTabla(prueba, 0, 4);
          * System.out.println();
+       
+       
+       
+         * ArrayEntero.ordenar(prueba);
          */
 
-        ArrayEntero.ordenar(prueba);
+        ArrayEntero.insercionDirecta(prueba);
+        System.out.println(Arrays.toString(prueba));
     }
 }
