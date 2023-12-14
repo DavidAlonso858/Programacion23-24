@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio56 {
+    
     public static int busquedaOrdenada(int[] tabla, int recorrido) {
         boolean encontrado = false;
         int medio, posicion = -1, fin = tabla.length - 1, inicio = 0;
