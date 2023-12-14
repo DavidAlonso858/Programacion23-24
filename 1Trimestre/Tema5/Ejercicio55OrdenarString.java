@@ -18,7 +18,17 @@ public class Ejercicio55OrdenarString {
         for (int i = 0; i < tablaPares.length; i++) {
             tablaPares[i] = aleatorio(fin);
         }
-        Arrays.sort(tablaPares);
+
+        for (int i = 0; i < tablaPares.length - 1; i++) {
+            for (int j = 0; j < tablaPares.length - 1 - i; j++) {
+                if (tablaPares[j] > tablaPares[j + 1]) {
+                    int temporal = tablaPares[j];
+                    tablaPares[j] = tablaPares[j + 1];
+                    tablaPares[j + 1] = temporal;
+                }
+            }
+        }
+
         System.out.print("\nLa tabla ordenada de pares es: ");
         return tablaPares;
     }

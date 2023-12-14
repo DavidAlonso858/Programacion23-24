@@ -88,18 +88,23 @@ public class ArrayEntero {
     }
 
     public static int busquedaOrdenada(int[] tabla, int numero) {
-
+        boolean encontrado = false;
         int posicion = -1, inicio = 0, fin = tabla.length - 1;
 
-        for (int medio = (inicio + fin) / 2; (tabla[medio] != numero);) {
+        while (inicio <= fin && !encontrado) {
+            int medio = inicio + (fin - inicio) / 2;
+
             if (tabla[medio] == numero) {
-                posicion = medio;
+                posicion = medio; // el numero esta en la mitad
+                encontrado = true;
             }
-            if (tabla[medio] < numero) {
-                medio -= 1;
-            } else if (tabla[medio] > numero) {
-                medio += 1;
+
+            else if (tabla[medio] < numero) {
+                inicio = medio + 1; // se quita de la izquierda al ser mayor
+            } else {
+                fin = medio - 1; // se quita de la derecha al ser menor
             }
+
         }
         return posicion;
     }
