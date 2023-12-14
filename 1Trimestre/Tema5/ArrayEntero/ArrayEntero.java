@@ -73,4 +73,34 @@ public class ArrayEntero {
             array[i] = temporal;
         }
     }
+
+    public static int busquedaDesordenada(int[] tabla, int numero) {
+        int posicion = -1;
+        boolean encontrado = false;
+
+        for (int i = 0; i < tabla.length && !encontrado; i++) {
+            if (tabla[i] == numero) {
+                posicion = i;
+                encontrado = true;
+            }
+        }
+        return posicion;
+    }
+
+    public static int busquedaOrdenada(int[] tabla, int numero) {
+
+        int posicion = -1, inicio = 0, fin = tabla.length - 1;
+
+        for (int medio = (inicio + fin) / 2; (tabla[medio] != numero);) {
+            if (tabla[medio] == numero) {
+                posicion = medio;
+            }
+            if (tabla[medio] < numero) {
+                medio -= 1;
+            } else if (tabla[medio] > numero) {
+                medio += 1;
+            }
+        }
+        return posicion;
+    }
 }
