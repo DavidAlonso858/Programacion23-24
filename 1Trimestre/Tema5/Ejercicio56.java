@@ -2,16 +2,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio56 {
-    
+
     public static int busquedaOrdenada(int[] tabla, int recorrido) {
         boolean encontrado = false;
         int medio, posicion = -1, fin = tabla.length - 1, inicio = 0;
 
         while (inicio <= fin && !encontrado) {
-            medio = inicio + (fin - inicio) / 2;
+            medio = (fin + inicio) / 2;
             if (tabla[medio] == recorrido) {
                 posicion = medio;
                 encontrado = true;
+                
             } else if (tabla[medio] < recorrido) {
                 inicio = medio + 1;
             } else {

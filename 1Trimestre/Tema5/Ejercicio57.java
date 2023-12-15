@@ -3,11 +3,24 @@ import java.util.Scanner;
 
 public class Ejercicio57 {
 
+    public static int buscarDesordenada(int[] tabla, int valor) {
+        boolean encontrado = false;
+        int posicion = -1;
+        
+        for (int i = 0; i < tabla.length && !encontrado; i++) {
+            if (tabla[i] == valor) {
+                posicion = i;
+                encontrado = true;
+            }
+        }
+        return posicion;
+    }
+
     public static int[] sinRepetidos(int[] t) {
         int[] sinRepetidos = new int[0];
 
         for (int recorrido : t) {
-            if (Arrays.binarySearch(sinRepetidos, recorrido) < 0) {
+            if (buscarDesordenada(sinRepetidos, recorrido) < 0) {
                 sinRepetidos = Arrays.copyOf(sinRepetidos, sinRepetidos.length + 1);
                 sinRepetidos[sinRepetidos.length - 1] = recorrido;
             }

@@ -92,7 +92,7 @@ public class ArrayEntero {
         int posicion = -1, inicio = 0, fin = tabla.length - 1;
 
         while (inicio <= fin && !encontrado) {
-            int medio = inicio + (fin - inicio) / 2;
+            int medio = (fin + inicio) / 2;
 
             if (tabla[medio] == numero) {
                 posicion = medio; // el numero esta en la mitad
@@ -107,5 +107,14 @@ public class ArrayEntero {
 
         }
         return posicion;
+    }
+
+    public static int[] copiaArray(int[] tabla) {
+        int[] tablaCopia = new int[tabla.length];
+        
+        for (int i = 0; i < tablaCopia.length; i++) {
+            tablaCopia[i] = tabla[i];
+        }
+        return tablaCopia; // copyOf hace lo mismo
     }
 }
