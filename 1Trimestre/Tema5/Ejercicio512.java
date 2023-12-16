@@ -25,6 +25,7 @@ public class Ejercicio512 {
         Scanner sc = new Scanner(System.in);
         int[] tabla = { 2, 4, 6, 8 };
         System.out.println(Arrays.toString(tabla));
+        
         desordenar(tabla);
 
     }
