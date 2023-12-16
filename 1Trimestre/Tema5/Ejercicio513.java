@@ -2,13 +2,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio513 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[] tabla = { 2, 4, 6, 8, 10 };
-
-        System.out.println("La copia desordenada: " + Arrays.toString(desordenarCopia(tabla)));
-        System.out.println("La tabla original: " + Arrays.toString(tabla));
-    }
 
     public static int aleatorio(int[] tabla) {
         int numero;
@@ -33,5 +26,13 @@ public class Ejercicio513 {
             tablaCopia[camnbioPosicion] = temporal;
         }
         return tablaCopia;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] tabla = { 2, 4, 6, 8, 10 };
+
+        System.out.println("La copia desordenada: " + Arrays.toString(desordenarCopia(tabla)));
+        System.out.println("La tabla original: " + Arrays.toString(tabla));
     }
 }
