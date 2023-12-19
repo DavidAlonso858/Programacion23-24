@@ -1,7 +1,13 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ejercicio514 {
+public class Ejercicio514InsercionValores {
+
+    public static int[] insertar(int[] tabla, int sueldo) { // trabajo con la copia que es la que tiene los valores introducidos
+        int[] nuevo = Arrays.copyOf(tabla, tabla.length + 1);
+        nuevo[nuevo.length - 1] = sueldo;
+        return nuevo;
+    }
 
     public static void ordenar(int[] tabla) {
         int temporal, minimo = 0, maximo = 0;
@@ -32,28 +38,21 @@ public class Ejercicio514 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int sueldo, sueldoIntroducidos = 0;
+        int sueldo;
+        int[] tabla = new int[0];
         System.out.println("Encuesta sobre la economia del pueblo. Si no quiere participar introduzca -1\n");
 
         do {
             System.out.print("Introduce su sueldo: ");
             sueldo = sc.nextInt();
             if (sueldo > -1) {
-                sueldoIntroducidos++;
+                tabla = insertar(tabla, sueldo);
             }
         } while (sueldo != -1);
 
-        int[] tablaSueldos = new int[sueldoIntroducidos];
         System.out.println();
-
-        for (int i = 0; i < tablaSueldos.length; i++) {
-            System.out.print("El sueldo " + (i + 1) + ": ");
-            tablaSueldos[i] = sc.nextInt();
-        }
-
-        System.out.println();
-        ordenar(tablaSueldos);
-        System.out.println("La media de los sueldos: " + media(tablaSueldos));
-        System.out.println("\nOrdenados de forma decreciente son: " + Arrays.toString(tablaSueldos));
+        ordenar(tabla);
+        System.out.println("La media de los sueldos: " + media(tabla));
+        System.out.println("\nOrdenados de forma decreciente son: " + Arrays.toString(tabla));
     }
 }
