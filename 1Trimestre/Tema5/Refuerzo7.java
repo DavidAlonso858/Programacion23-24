@@ -1,12 +1,6 @@
 import java.util.Scanner;
 
 public class Refuerzo7 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[] tabla = new int[100];
-
-        tablaCambio(tabla);
-    }
 
     public static int aleatorio() {
         int numero;
@@ -41,5 +35,12 @@ public class Refuerzo7 {
                 System.out.print(i + " ");
             }
         }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] tabla = new int[100];
+
+        tablaCambio(tabla);
     }
 }
