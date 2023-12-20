@@ -2,13 +2,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio520 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[] tabla1 = { 5, 6, 7, 8, 9 };
-        int[] tabla2 = { 4, 10, 16, 18, 20 };
-
-        System.out.println("Las dos tablas fusionadas: "+Arrays.toString(fusionTablas(tabla1, tabla2)));
-    }
 
     public static int[] fusionTablas(int[] tabla1, int[] tabla2) {
         int[] tablaFusion = new int[tabla1.length + tabla2.length];
@@ -40,5 +33,13 @@ public class Ejercicio520 {
             j++;
         }
         return tablaFusion;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] tabla1 = { 5, 6, 7, 8, 9 };
+        int[] tabla2 = { 4, 10, 16, 18, 20 };
+
+        System.out.println("Las dos tablas fusionadas: " + Arrays.toString(fusionTablas(tabla1, tabla2)));
     }
 }
