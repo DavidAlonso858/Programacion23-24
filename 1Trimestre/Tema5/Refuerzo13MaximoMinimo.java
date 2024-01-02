@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Refuerzo13 {
+public class Refuerzo13MaximoMinimo {
 
     public static int aleatorio() {
         int numero;
