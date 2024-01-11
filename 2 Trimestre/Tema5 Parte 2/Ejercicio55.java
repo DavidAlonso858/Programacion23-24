@@ -11,11 +11,11 @@ public class Ejercicio55 {
         return tablaInser;
     }
 
-    public static void ordenar(int[] tabla) {
+    public static void ordenar(int[] tabla) { // burbuja
         int temporal;
         for (int i = 0; i < tabla.length - 1; i++) {
             for (int j = 0; j < tabla.length - i - 1; j++) {
-                if (tabla[j] > tabla[j + 1]) {
+                if (tabla[j] > tabla[j + 1]) { 
                     temporal = tabla[j + 1];
                     tabla[j + 1] = tabla[j];
                     tabla[j] = temporal;
