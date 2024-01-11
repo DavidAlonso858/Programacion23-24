@@ -6,7 +6,7 @@ public class Refuerzo21 {
     public static int aleatorio() {
         int numero;
 
-        numero = (int) (Math.random() * (500 - 0 + 1));
+        numero = (int) (Math.random() * (501));
 
         return numero;
     }

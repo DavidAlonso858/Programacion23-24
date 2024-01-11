@@ -30,7 +30,7 @@ public class Ejercicio57 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] t = { 8, 4, 6, 2 };
+        int[] t = { 8, 4, 6, 2, 8 };
 
         System.out.println("La tabla nueva es: " + Arrays.toString(sinRepetidos(t)));
     }
