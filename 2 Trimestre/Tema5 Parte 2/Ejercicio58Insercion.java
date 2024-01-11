@@ -61,7 +61,7 @@ public class Ejercicio58Insercion {
         rellenarArray(tabla, sc);
         ordenar(tabla);
 
-        System.out.println(Arrays.toString(Par(tabla, tablaPares)));
-        System.out.println(Arrays.toString(Impar(tabla, tablaImpares)));
+        System.out.println("\nTabla par "+Arrays.toString(Par(tabla, tablaPares)));
+        System.out.println("Tabla impar "+Arrays.toString(Impar(tabla, tablaImpares)));
     }
 }
