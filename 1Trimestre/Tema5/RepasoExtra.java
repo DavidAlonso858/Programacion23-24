@@ -13,10 +13,12 @@ public class RepasoExtra {
 
         int primos = 0, primosNo = 0;
 
-        primos = contadorPrimo(tabla, primos); // cuento la cantidad de primos
-        primosNo = contadorNoPrimos(tabla, primosNo); // cuento la cantidad de no primos
-
         ordenPrimo(tabla); // ordeno primos-noprimos
+        primos = contadorPrimo(tabla); // cuento la cantidad de primos
+        primosNo = contadorNoPrimos(tabla); // cuento la cantidad de no primos
+
+        mostrar(tabla);
+        System.out.println();
         ordenFinal(tabla, primos, primosNo); // ordeno tanto uno como otro de forma asc-desc
         System.out.print("La tabla final ordenada es: ");
         mostrar(tabla);
@@ -97,23 +99,25 @@ public class RepasoExtra {
         }
     }
 
-    public static int contadorPrimo(int[] tabla, int primos) {
-
+    public static int contadorPrimo(int[] tabla) {
+        int primos = 0;
         for (int i = 0; i < tabla.length; i++) {
             if (esPrimo(tabla[i])) {
                 primos++;
             }
         }
+        System.out.println("El numero de primos es: " + primos);
         return primos;
     }
 
-    public static int contadorNoPrimos(int[] tabla, int primosNo) {
-
+    public static int contadorNoPrimos(int[] tabla) {
+        int primosNo = 0;
         for (int i = 0; i < tabla.length; i++) {
             if (!esPrimo(tabla[i])) {
                 primosNo++;
             }
         }
+        System.out.println("El numero de no primos es: " + primosNo);
         return primosNo;
     }
 
