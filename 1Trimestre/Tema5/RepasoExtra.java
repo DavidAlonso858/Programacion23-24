@@ -14,10 +14,9 @@ public class RepasoExtra {
         int primos = 0, primosNo = 0;
 
         ordenPrimo(tabla); // ordeno primos-noprimos
-        primos = contadorPrimo(tabla); // cuento la cantidad de primos
+        primos = contadorPrimo(tabla); // cuento la cantidad de xprimos
         primosNo = contadorNoPrimos(tabla); // cuento la cantidad de no primos
 
-        mostrar(tabla);
         System.out.println();
         ordenFinal(tabla, primos, primosNo); // ordeno tanto uno como otro de forma asc-desc
         System.out.print("La tabla final ordenada es: ");
