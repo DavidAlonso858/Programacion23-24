@@ -18,17 +18,12 @@ public class Ejercicio515 {
             tamaño = tabla.length;
             for (int j = 0; j < tabla[i].length; j++) {
                 System.out.print(tabla[i][j] + "\t");
-                if (j == 0) {
-                    sumaPrimer += tabla[i][j];
-                } else if (j == 1) {
-                    sumaSegun += tabla[i][j];
-                } else if (j == 2) {
-                    sumaTercer += tabla[i][j];
-                }
             }
+            sumaPrimer += tabla[i][0];
+            sumaSegun += tabla[i][1];
+            sumaTercer += tabla[i][2];
             System.out.println();
         }
-
         System.out.println("\nLa media del primer trimestre es: " + (sumaPrimer / tamaño));
         System.out.println("\nLa media del segundo trimestre es: " + (sumaSegun / tamaño));
         System.out.println("\nLa media del tercer trimestre es: " + (sumaTercer / tamaño));
