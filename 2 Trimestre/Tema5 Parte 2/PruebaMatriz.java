@@ -1,13 +1,6 @@
 import java.util.Scanner;
 
 public class PruebaMatriz {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[][] tabla = new int[5][5]; // {{1, 2, 3, 4 , 5}, {6, 7, 8, 9, 10}};
-
-        rellenarArrayDoble(tabla, sc);
-        mostrar(tabla);
-    }
 
     public static void rellenarArrayDoble(int[][] tabla, Scanner sc) {
         for (int i = 0; i < tabla.length; i++) {
@@ -25,5 +18,13 @@ public class PruebaMatriz {
             }
             System.out.println(); // saltar entre filas
         }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[][] tabla = new int[5][5]; // {{1, 2, 3, 4 , 5}, {6, 7, 8, 9, 10}};
+
+        rellenarArrayDoble(tabla, sc);
+        mostrar(tabla);
     }
 }
