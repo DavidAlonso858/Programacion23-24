@@ -14,18 +14,12 @@ public class Ejercicio518 {
 
     public static boolean esMagica(int[][] tabla) {
         boolean magica = false;
-        for (int i = 0; i < tabla.length; i++) {
-            for (int j = 0; j < tabla.length; j++) {
-
-            }
-        }
         for (int i = 0; i < tabla.length && !magica; i++) {
-            if (calcularSumaFila(tabla, i) == calcularSumaColumna(tabla, 3) // Verificar si la suma de las filas y
-                                                                              // columnas coincide
-                    || calcularSumaFila(tabla, i) == calcularSumaColumna(tabla, 2)
-                    || calcularSumaFila(tabla, i) == calcularSumaColumna(tabla, 1)
-                    || calcularSumaFila(tabla, i) == calcularSumaColumna(tabla, 0)) {
-                magica = true;
+            for (int j = 0; j < tabla[i].length; j++) {
+                if (calcularSumaFila(tabla, i) == calcularSumaColumna(tabla, j)) { // Verificar si la suma de las filas
+                                                                                   // y columnas coincide
+                    magica = true;
+                }
             }
         }
         return magica;
