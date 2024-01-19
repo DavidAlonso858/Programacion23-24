@@ -22,12 +22,12 @@ public class Refuerzo2 {
     }
 
     public static int sumaFilas(int[][] hojaCalculo, int filas) {
-        int sumaColumnas = 0;
+        int sumaFilas = 0;
         for (int i = 0; i < hojaCalculo[filas].length; i++) {
-            sumaColumnas += hojaCalculo[filas][i];
+            sumaFilas += hojaCalculo[filas][i];
         }
 
-        return sumaColumnas;
+        return sumaFilas;
     }
 
     public static void mostrar(int[][] hojaCalculo) {
@@ -57,3 +57,4 @@ public class Refuerzo2 {
         mostrar(hojaCalculo);
     }
 }
+ 
