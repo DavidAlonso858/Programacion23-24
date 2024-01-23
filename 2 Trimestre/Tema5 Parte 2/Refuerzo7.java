@@ -33,15 +33,15 @@ public class Refuerzo7 {
 
     public static boolean buscarTesoro(char[][] tablaTesoro, int fila, int columna) {
         boolean encontrado = false;
-        if (tablaTesoro[fila - 1][columna - 1] == 'T') {
+        if (tablaTesoro[fila][columna] == 'T') {
             System.out.println("''Enrohabuena has encontrado el tesoro de 100k''");
             encontrado = true;
-        } else if (tablaTesoro[fila - 1][columna - 1] == 'M') {
+        } else if (tablaTesoro[fila][columna] == 'M') {
             System.out.println("''Lo siento, has pisado una mina. Game Over''");
             encontrado = true;
         } else {
             System.out.println("''Puedes continuar sin problema''");
-            avisaMina(tablaTesoro, (fila - 1), (columna - 1));
+            avisaMina(tablaTesoro, (fila), (columna));
         }
         return encontrado;
     }
@@ -148,6 +148,6 @@ public class Refuerzo7 {
                 columna = sc.nextInt();
             } while (fila < 1 || fila > 3 || columna < 1 || columna > 3);
 
-        } while (!buscarTesoro(tablaTesoro, fila, columna));
+        } while (!buscarTesoro(tablaTesoro, fila-1, columna-1));
     }
 }
