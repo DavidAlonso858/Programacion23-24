@@ -24,7 +24,7 @@ public class Refuerzo7 {
             fila = aleatorio(tablaTesoro);
             columna = aleatorio(tablaTesoro);
 
-            if (tablaTesoro[fila][columna] != 'T') {
+            if (tablaTesoro[fila][columna] != 'T' && tablaTesoro[fila][columna] != 'M') {
                 tablaTesoro[fila][columna] = 'M';
                 minas++;
             }
