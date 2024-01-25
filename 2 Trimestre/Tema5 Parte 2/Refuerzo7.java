@@ -47,71 +47,87 @@ public class Refuerzo7 {
     }
 
     public static void avisaMina(char[][] tablaTesoro, int fila, int columna) {
-        switch (fila) {
-            case 0:
-                switch (columna) {
-                    case 0:
-                        if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila + 1][columna] == 'M') {
-                            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
-                        }
-                        break;
-                    case 1:
-                        if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila][columna - 1] == 'M'
-                                || tablaTesoro[fila + 1][columna] == 'M') {
-                            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
-                        }
-                        break;
-                    case 2:
-                        if (tablaTesoro[fila][columna - 1] == 'M' || tablaTesoro[fila + 1][columna] == 'M') {
-                            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
-                        }
-                        break;
-                }
 
-                break;
-            case 1:
-                switch (columna) {
-                    case 0:
-                        if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila + 1][columna] == 'M'
-                                || tablaTesoro[fila - 1][columna] == 'M') {
-                            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
-                        }
-                        break;
-                    case 1:
-                        if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila][columna - 1] == 'M'
-                                || tablaTesoro[fila + 1][columna] == 'M' || tablaTesoro[fila - 1][columna] == 'M') {
-                            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
-                        }
-                        break;
-                    case 2:
-                        if (tablaTesoro[fila][columna - 1] == 'M' || tablaTesoro[fila + 1][columna] == 'M'
-                                || tablaTesoro[fila - 1][columna] == 'M') {
-                            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
-                        }
-                        break;
-                }
-
-                break;
-            case 2:
-                switch (columna) {
-                    case 0:
-                        if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila - 1][columna] == 'M') {
-                            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
-                        }
-                        break;
-                    case 1:
-                        if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila][columna - 1] == 'M'
-                                || tablaTesoro[fila - 1][columna] == 'M') {
-                            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
-                        }
-                        break;
-                    case 2:
-                        if (tablaTesoro[fila][columna - 1] == 'M' || tablaTesoro[fila - 1][columna] == 'M') {
-                            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
-                        }
-                        break;
-                }
+        if ((fila > 0) && (columna > 0) && (tablaTesoro[fila - 1][columna - 1] == 'M')) {
+            System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
         }
+        /*
+         * switch (fila) {
+         * case 0:
+         * switch (columna) {
+         * case 0:
+         * if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila + 1][columna]
+         * == 'M') {
+         * System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
+         * }
+         * break;
+         * case 1:
+         * if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila][columna - 1]
+         * == 'M'
+         * || tablaTesoro[fila + 1][columna] == 'M') {
+         * System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
+         * }
+         * break;
+         * case 2:
+         * if (tablaTesoro[fila][columna - 1] == 'M' || tablaTesoro[fila + 1][columna]
+         * == 'M') {
+         * System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
+         * }
+         * break;
+         * }
+         * 
+         * break;
+         * case 1:
+         * switch (columna) {
+         * case 0:
+         * if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila + 1][columna]
+         * == 'M'
+         * || tablaTesoro[fila - 1][columna] == 'M') {
+         * System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
+         * }
+         * break;
+         * case 1:
+         * if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila][columna - 1]
+         * == 'M'
+         * || tablaTesoro[fila + 1][columna] == 'M' || tablaTesoro[fila - 1][columna] ==
+         * 'M') {
+         * System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
+         * }
+         * break;
+         * case 2:
+         * if (tablaTesoro[fila][columna - 1] == 'M' || tablaTesoro[fila + 1][columna]
+         * == 'M'
+         * || tablaTesoro[fila - 1][columna] == 'M') {
+         * System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
+         * }
+         * break;
+         * }
+         * 
+         * break;
+         * case 2:
+         * switch (columna) {
+         * case 0:
+         * if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila - 1][columna]
+         * == 'M') {
+         * System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
+         * }
+         * break;
+         * case 1:
+         * if (tablaTesoro[fila][columna + 1] == 'M' || tablaTesoro[fila][columna - 1]
+         * == 'M'
+         * || tablaTesoro[fila - 1][columna] == 'M') {
+         * System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
+         * }
+         * break;
+         * case 2:
+         * if (tablaTesoro[fila][columna - 1] == 'M' || tablaTesoro[fila - 1][columna]
+         * == 'M') {
+         * System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
+         * }
+         * break;
+         * }
+         */
+    }
 
     }
 
@@ -148,6 +164,6 @@ public class Refuerzo7 {
                 columna = sc.nextInt();
             } while (fila < 1 || fila > 3 || columna < 1 || columna > 3);
 
-        } while (!buscarTesoro(tablaTesoro, fila-1, columna-1));
+        } while (!buscarTesoro(tablaTesoro, fila - 1, columna - 1));
     }
 }

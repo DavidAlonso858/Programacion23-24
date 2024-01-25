@@ -83,8 +83,8 @@ public class Refuerzo10 {
                 System.out.print("En que columna introduces la X: ");
                 columnaX = sc.nextInt();
 
-                tabla[filaX - 1][columnaX - 1] = X;
             } while (filaX > 3 || columnaX > 3 || columnaX < 1 || filaX < 1);
+            tabla[filaX - 1][columnaX - 1] = X;
             turnos++;
 
             System.out.println();
@@ -98,8 +98,8 @@ public class Refuerzo10 {
                     System.out.print("En que columna introduces la O: ");
                     columnaO = sc.nextInt();
 
-                    tabla[filaO - 1][columnaO - 1] = O;
                 } while (filaO > 3 || columnaO > 3 || columnaO < 1 || filaO < 1);
+                tabla[filaO - 1][columnaO - 1] = O;
                 turnos++;
             }
         }
