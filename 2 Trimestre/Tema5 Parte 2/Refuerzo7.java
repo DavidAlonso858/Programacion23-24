@@ -52,7 +52,7 @@ public class Refuerzo7 {
             System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
         }
 
-        (fila>0)[columnas]
+       
         /*
          * switch (fila) {
          * case 0:
@@ -131,7 +131,6 @@ public class Refuerzo7 {
          */
     }
 
-    }
 
     public static void mostrar(char[][] tablaTesoro) {
         for (int i = 0; i < tablaTesoro.length; i++) {
