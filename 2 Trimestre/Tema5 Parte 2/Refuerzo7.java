@@ -182,7 +182,7 @@ public class Refuerzo7 {
         colocarMina(tablaTesoro);
 
         int fila, columna;
-
+        System.out.println("Busca Minas 2.0");
         do {
             mostrar(tablaTesoro);
             System.out.println();
