@@ -51,6 +51,8 @@ public class Refuerzo7 {
         if ((fila > 0) && (columna > 0) && (tablaTesoro[fila - 1][columna - 1] == 'M')) {
             System.out.println("¡CUIDADO! ¡Hay una mina cerca!");
         }
+
+        (fila>0)[columnas]
         /*
          * switch (fila) {
          * case 0:
