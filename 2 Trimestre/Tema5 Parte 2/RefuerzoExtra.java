@@ -4,7 +4,7 @@ public class RefuerzoExtra {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         char[][] conectaCuatro;
-        int dimension, columnaRojo, columnaAzul, rojas = 0, azules = 0;
+        int dimension, columnaRojo, columnaAzul;
         char turno;
         System.out.println("Bienvenido al Conecta 4");
 
@@ -13,7 +13,7 @@ public class RefuerzoExtra {
         rellanarMatriz(conectaCuatro);
 
         System.out.println();
-        mostrarReversi(conectaCuatro, rojas, azules);
+        mostrarReversi(conectaCuatro);
 
         while (!finJuego(conectaCuatro)) {
 
@@ -23,9 +23,9 @@ public class RefuerzoExtra {
             turno = 'R';
 
             if (insertarFichaEnColumna(conectaCuatro, columnaRojo - 1, turno)) {
-                rojas++;
                 System.out.println();
-                mostrarReversi(conectaCuatro, rojas, azules); // mostrar en cada jugada
+                cambiarColor(conectaCuatro, turno, columnaRojo - 1);
+                mostrarReversi(conectaCuatro); // mostrar en cada jugada
             }
 
             System.out.println("\nTurno Jugador Azul.");
@@ -33,9 +33,9 @@ public class RefuerzoExtra {
             columnaAzul = sc.nextInt();
             turno = 'A';
             if (insertarFichaEnColumna(conectaCuatro, columnaAzul - 1, turno)) {
-                azules++;
                 System.out.println();
-                mostrarReversi(conectaCuatro, rojas, azules); // mostrar en cada jugada
+                cambiarColor(conectaCuatro, turno, columnaAzul - 1);
+                mostrarReversi(conectaCuatro); // mostrar en cada jugada
             }
         }
         System.out.println("\nFin del Conecta 4. Espero que haya ido todo bien");
@@ -88,11 +88,75 @@ public class RefuerzoExtra {
         return acabado;
     }
 
-    public static void mostrarReversi(char[][] conectaCuatro, int rojas, int azules) {
+    public static void cambiarColor(char[][] conectaCuatro, char turno, int columna) {
+        int filaEncontrada = 0;
+        for (int filaRecorrido = 0; filaRecorrido < conectaCuatro[0].length; filaRecorrido++) {
+            if (conectaCuatro[filaRecorrido][columna] == turno) {
+                filaEncontrada = filaRecorrido;
+            }
+        }
+
+        if ((filaEncontrada > 0) && (columna > 0) && (conectaCuatro[filaEncontrada - 1][columna - 1] != turno)
+                && (conectaCuatro[filaEncontrada - 1][columna - 1] != 'X')) { // cuadrado arriba izquierda
+
+            conectaCuatro[filaEncontrada - 1][columna - 1] = turno;
+        }
+        if ((filaEncontrada > 0) && (columna < conectaCuatro[filaEncontrada].length - 1)
+                && (conectaCuatro[filaEncontrada - 1][columna + 1] != turno)
+                && (conectaCuatro[filaEncontrada - 1][columna + 1] != 'X')) { // cuadrado arriba derecha
+
+            conectaCuatro[filaEncontrada - 1][columna + 1] = turno;
+        }
+        if ((columna > 0) && (conectaCuatro[filaEncontrada][columna - 1] != turno)
+                && (conectaCuatro[filaEncontrada][columna - 1] != 'X')) { // cuadrado izquierda
+
+            conectaCuatro[filaEncontrada][columna - 1] = turno;
+        }
+        if ((columna < conectaCuatro[filaEncontrada].length - 1)
+                && (conectaCuatro[filaEncontrada][columna + 1] != turno)
+                && (conectaCuatro[filaEncontrada][columna + 1] != 'X')) { // cuadrado derecha
+
+            conectaCuatro[filaEncontrada][columna + 1] = turno;
+        }
+        if ((filaEncontrada < conectaCuatro[filaEncontrada].length - 1)
+                && (conectaCuatro[filaEncontrada + 1][columna] != turno)
+                && (conectaCuatro[filaEncontrada + 1][columna] != 'X')) { // cuadrado abajo
+
+            conectaCuatro[filaEncontrada + 1][columna] = turno;
+        }
+        if ((filaEncontrada > 0) && (conectaCuatro[filaEncontrada - 1][columna] != turno)
+                && (conectaCuatro[filaEncontrada - 1][columna] != 'X')) { // cuadrado arriba
+
+            conectaCuatro[filaEncontrada - 1][columna] = turno;
+        }
+        if ((filaEncontrada < conectaCuatro[filaEncontrada].length - 1)
+                && (columna < conectaCuatro[filaEncontrada].length - 1)
+                && (conectaCuatro[filaEncontrada + 1][columna + 1] != turno)
+                && (conectaCuatro[filaEncontrada + 1][columna + 1] != 'X')) { // cuadrado abajo derecha
+
+            conectaCuatro[filaEncontrada + 1][columna + 1] = turno;
+        }
+        if ((filaEncontrada < conectaCuatro[filaEncontrada].length - 1)
+                && (columna > 0 && columna < conectaCuatro[filaEncontrada].length - 1)
+                && (conectaCuatro[filaEncontrada + 1][columna - 1] != turno)
+                && (conectaCuatro[filaEncontrada + 1][columna - 1] != 'X')) { // cuadrado abajo izquierda
+
+            conectaCuatro[filaEncontrada + 1][columna - 1] = turno;
+        }
+
+    }
+
+    public static void mostrarReversi(char[][] conectaCuatro) {
+        int rojas = 0, azules = 0;
         for (int i = 0; i < conectaCuatro.length; i++) {
             System.out.print("\t  ");
             for (int j = 0; j < conectaCuatro[i].length; j++) {
                 System.out.print(conectaCuatro[i][j] + "\t");
+                if (conectaCuatro[i][j] == 'R') {
+                    rojas++;
+                } else if (conectaCuatro[i][j] == 'A') {
+                    azules++;
+                }
             }
             System.out.print("Fila: " + (i + 1));
             System.out.println();
