@@ -1,45 +1,6 @@
 import java.util.Scanner;
 
 public class RefuerzoExtra {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        char[][] conectaCuatro;
-        int dimension, columnaRojo, columnaAzul;
-        char turno;
-        System.out.println("Bienvenido al Conecta 4");
-
-        dimension = dimensionJuego(sc);
-        conectaCuatro = new char[dimension][dimension];
-        rellanarMatriz(conectaCuatro);
-
-        System.out.println();
-        mostrarReversi(conectaCuatro);
-
-        while (!finJuego(conectaCuatro)) {
-
-            System.out.println("\nTurno Jugador Rojo.");
-            System.out.print("Introduce la columna de la ficha a insertar: ");
-            columnaRojo = sc.nextInt();
-            turno = 'R';
-
-            if (insertarFichaEnColumna(conectaCuatro, columnaRojo - 1, turno)) {
-                System.out.println();
-                cambiarColor(conectaCuatro, turno, columnaRojo - 1);
-                mostrarReversi(conectaCuatro); // mostrar en cada jugada
-            }
-
-            System.out.println("\nTurno Jugador Azul.");
-            System.out.print("Introduce la columna de la ficha a insertar: ");
-            columnaAzul = sc.nextInt();
-            turno = 'A';
-            if (insertarFichaEnColumna(conectaCuatro, columnaAzul - 1, turno)) {
-                System.out.println();
-                cambiarColor(conectaCuatro, turno, columnaAzul - 1);
-                mostrarReversi(conectaCuatro); // mostrar en cada jugada
-            }
-        }
-        System.out.println("\nFin del Conecta 4. Espero que haya ido todo bien");
-    }
 
     public static int dimensionJuego(Scanner sc) {
         int dimension;
@@ -168,5 +129,45 @@ public class RefuerzoExtra {
 
         System.out.println("\n\nHay " + rojas + " fichas rojas");
         System.out.println("Hay " + azules + " fichas azules");
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char[][] conectaCuatro;
+        int dimension, columnaRojo, columnaAzul;
+        char turno;
+        System.out.println("Bienvenido al Conecta 4");
+
+        dimension = dimensionJuego(sc);
+        conectaCuatro = new char[dimension][dimension];
+        rellanarMatriz(conectaCuatro);
+
+        System.out.println();
+        mostrarReversi(conectaCuatro);
+
+        while (!finJuego(conectaCuatro)) {
+
+            System.out.println("\nTurno Jugador Rojo.");
+            System.out.print("Introduce la columna de la ficha a insertar: ");
+            columnaRojo = sc.nextInt();
+            turno = 'R';
+
+            if (insertarFichaEnColumna(conectaCuatro, columnaRojo - 1, turno)) {
+                System.out.println();
+                cambiarColor(conectaCuatro, turno, columnaRojo - 1);
+                mostrarReversi(conectaCuatro); // mostrar en cada jugada
+            }
+
+            System.out.println("\nTurno Jugador Azul.");
+            System.out.print("Introduce la columna de la ficha a insertar: ");
+            columnaAzul = sc.nextInt();
+            turno = 'A';
+            if (insertarFichaEnColumna(conectaCuatro, columnaAzul - 1, turno)) {
+                System.out.println();
+                cambiarColor(conectaCuatro, turno, columnaAzul - 1);
+                mostrarReversi(conectaCuatro); // mostrar en cada jugada
+            }
+        }
+        System.out.println("\nFin del Conecta 4. Espero que haya ido todo bien");
     }
 }
