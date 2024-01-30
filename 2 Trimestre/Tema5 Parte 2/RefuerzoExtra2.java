@@ -29,7 +29,7 @@ public class RefuerzoExtra2 {
         }
     }
 
-    public static boolean finJuego(int[][] juegoBelen, int numColumnas, int numeros) {
+    public static boolean finJuego(int[][] juegoBelen, int numColumnas, int numeros, int columnaIntroducida) {
         boolean acabado = false;
 
         for (int i = 0; i < juegoBelen.length && !acabado; i++) {
@@ -42,13 +42,13 @@ public class RefuerzoExtra2 {
         }
 
         for (int i = 0; i < juegoBelen.length; i++) {
-            for (int j = 0; j < juegoBelen[i].length - 1; j++) {
-                if (juegoBelen[i][j] > juegoBelen[i][j + 1] && juegoBelen[i][j + 1] != 0) {
-                    acabado = true;
-                    System.out.println("FIN DEL JUEGO.");
-                    numeros--;
-                    System.out.println("Ha colocado " + numeros + " de " + (numColumnas * juegoBelen.length));
-                }
+            if (columnaIntroducida < juegoBelen[0].length - 1
+                    && juegoBelen[i][columnaIntroducida] > juegoBelen[i][columnaIntroducida + 1]
+                    && juegoBelen[i][columnaIntroducida + 1] != 0) {
+                acabado = true;
+                System.out.println("FIN DEL JUEGO.");
+                numeros--;
+                System.out.println("Ha colocado " + numeros + " de " + (numColumnas * juegoBelen.length));
             }
         }
         return acabado;
@@ -87,7 +87,7 @@ public class RefuerzoExtra2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[][] juegoBelen = new int[5][];
-        int numColumnas, numColocar, columnaIntroducida, numeros = 0;
+        int numColumnas, numColocar, columnaIntroducida = 1, numeros = 0;
 
         numColumnas = numColumnas(sc);
         for (int i = 0; i < juegoBelen.length; i++) {
@@ -95,7 +95,7 @@ public class RefuerzoExtra2 {
         }
         mostrar(juegoBelen, numColumnas);
 
-        while (!finJuego(juegoBelen, numColumnas, numeros)) {
+        while (!finJuego(juegoBelen, numColumnas, numeros, columnaIntroducida - 1)) {
 
             numColocar = aleatorioInsertar();
             System.out.println("Debe colocar el numero " + numColocar);
