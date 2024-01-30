@@ -3,7 +3,8 @@ public class Refuerzo13 {
     public static int aleatorio() {
         int numero;
 
-        numero = (int) (Math.random() * (210 - 140) + 140);
+        numero = (int) (Math.random() * (211 - 140) + 140); // incluir los dos tanto el 210 y el 140
+       
 
         return numero;
     }

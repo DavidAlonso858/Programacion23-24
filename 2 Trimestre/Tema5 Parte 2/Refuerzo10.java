@@ -2,63 +2,41 @@ import java.util.Scanner;
 
 public class Refuerzo10 {
 
-    public static boolean ganadorX(String[][] tabla, String X) {
+    public static boolean ganador(char[][] tabla, char turno) {
         boolean ganador = false;
 
-        ganador = ((tabla[0][0] == X) && (tabla[0][1] == X) && (tabla[0][2] == X) // fila1
+        ganador = ((tabla[0][0] == turno) && (tabla[0][1] == turno) && (tabla[0][2] == turno) // fila1
                 ||
-                (tabla[1][0] == X) && (tabla[1][1] == X) && (tabla[1][2] == X) // fila2
+                (tabla[1][0] == turno) && (tabla[1][1] == turno) && (tabla[1][2] == turno) // fila2
                 ||
-                (tabla[2][0] == X) && (tabla[2][1] == X) && (tabla[2][2] == X) // fila3
+                (tabla[2][0] == turno) && (tabla[2][1] == turno) && (tabla[2][2] == turno) // fila3
                 ||
-                (tabla[0][0] == X) && (tabla[1][0] == X) && (tabla[2][0] == X) // columna1
+                (tabla[0][0] == turno) && (tabla[1][0] == turno) && (tabla[2][0] == turno) // columna1
                 ||
-                (tabla[0][1] == X) && (tabla[1][1] == X) && (tabla[2][1] == X) // columna2
+                (tabla[0][1] == turno) && (tabla[1][1] == turno) && (tabla[2][1] == turno) // columna2
                 ||
-                (tabla[0][2] == X) && (tabla[1][2] == X) && (tabla[2][2] == X) // columna3
+                (tabla[0][2] == turno) && (tabla[1][2] == turno) && (tabla[2][2] == turno) // columna3
                 ||
-                (tabla[0][0] == X) && (tabla[1][1] == X) && (tabla[2][2] == X) // diagonal1
+                (tabla[0][0] == turno) && (tabla[1][1] == turno) && (tabla[2][2] == turno) // diagonal1
                 ||
-                (tabla[0][2] == X) && (tabla[1][1] == X) && (tabla[2][0] == X)); // diagonal2
+                (tabla[0][2] == turno) && (tabla[1][1] == turno) && (tabla[2][0] == turno)); // diagonal2
 
         return ganador;
     }
 
-    public static boolean ganadorO(String[][] tabla, String O) {
-        boolean ganador = false;
-
-        ganador = ((tabla[0][0] == O) && (tabla[0][1] == O) && (tabla[0][2] == O) // fila1
-                ||
-                (tabla[1][0] == O) && (tabla[1][1] == O) && (tabla[1][2] == O) // fila2
-                ||
-                (tabla[2][0] == O) && (tabla[2][1] == O) && (tabla[2][2] == O) // fila3
-                ||
-                (tabla[0][0] == O) && (tabla[1][0] == O) && (tabla[2][0] == O) // columna1
-                ||
-                (tabla[0][1] == O) && (tabla[1][1] == O) && (tabla[2][1] == O) // columna2
-                ||
-                (tabla[0][2] == O) && (tabla[1][2] == O) && (tabla[2][2] == O) // columna3
-                ||
-                (tabla[0][0] == O) && (tabla[1][1] == O) && (tabla[2][2] == O) // diagonal1
-                ||
-                (tabla[0][2] == O) && (tabla[1][1] == O) && (tabla[2][0] == O)); // diagonal2
-
-        return ganador;
-    }
-
-    public static void resultado(String[][] tabla, boolean ganadorX, boolean ganadorO) {
-        if (ganadorX) {
+    public static void resultado(char[][] tabla, boolean ganador, char turno) {
+        if (ganador && turno == 'X') {
             System.out.println("\nEnhorabuena, ha ganado el Jugador 1 con sus increible jugada con las X");
-        } else if (ganadorO) {
+        } else if (ganador && turno == 'O') {
             System.out.println("\nEnhorabuena, ha ganado el Jugador 2 con sus increible jugada con los O");
         } else
             System.out.println("\nEmpate en este reñido duelo de titanes");
     }
 
-    public static void mostrar(String[][] tabla) {
+    public static void mostrar(char[][] tabla) {
         for (int i = 0; i < tabla.length; i++) {
             for (int j = 0; j < tabla[i].length; j++) {
-                System.out.print(tabla[i][j] + "\t");
+                System.out.print(tabla[i][j] + "|\t");
             }
             System.out.println();
         }
@@ -66,12 +44,11 @@ public class Refuerzo10 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String X = "X";
-        String O = "O";
-        String[][] tabla = new String[3][3];
+        char turno = 'X';
+        char[][] tabla = new char[3][3];
         int filaX, columnaX, filaO, columnaO, turnos = 0;
 
-        while (!ganadorO(tabla, O) && !ganadorX(tabla, X) && turnos != 9) {
+        while (!ganador(tabla, turno) && turnos != 9) {
             System.out.println();
             mostrar(tabla);
             System.out.println();
@@ -83,14 +60,15 @@ public class Refuerzo10 {
                 System.out.print("En que columna introduces la X: ");
                 columnaX = sc.nextInt();
 
-            } while (filaX > 3 || columnaX > 3 || columnaX < 1 || filaX < 1);
-            tabla[filaX - 1][columnaX - 1] = X;
+            } while (filaX > tabla.length || columnaX > tabla[0].length || columnaX < 1 || filaX < 1);
+            turno = 'X';
+            tabla[filaX - 1][columnaX - 1] = turno;
             turnos++;
 
             System.out.println();
             mostrar(tabla);
 
-            if (!ganadorX(tabla, X) && turnos < 9) {
+            if (!ganador(tabla, turno) && turnos < 9) {
                 System.out.println("\nTurno Jugador 2");
                 do {
                     System.out.print("En que fila introduces la O: ");
@@ -99,11 +77,12 @@ public class Refuerzo10 {
                     columnaO = sc.nextInt();
 
                 } while (filaO > 3 || columnaO > 3 || columnaO < 1 || filaO < 1);
-                tabla[filaO - 1][columnaO - 1] = O;
+                turno = 'O';
+                tabla[filaO - 1][columnaO - 1] = turno;
                 turnos++;
             }
         }
-        boolean ganador2 = ganadorO(tabla, O), ganador1 = ganadorX(tabla, X);
-        resultado(tabla, ganador1, ganador2);
+        boolean ganador = ganador(tabla, turno);
+        resultado(tabla, ganador, turno);
     }
 }
