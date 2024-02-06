@@ -6,7 +6,7 @@ public class Ejercicio63 {
         String contraseña, adivina;
         int compararPalabras;
 
-        System.out.println("Introduzca la contraseña Jugador 1: ");
+        System.out.print("Introduzca la contraseña Jugador 1: ");
         contraseña = sc.nextLine();
 
         do {
@@ -16,7 +16,7 @@ public class Ejercicio63 {
             compararPalabras = contraseña.compareToIgnoreCase(adivina);
 
             if (compararPalabras == 0) {
-                System.out.println("Acertaste");
+                System.out.println("Acertaste!");
             } else if (compararPalabras < 0) {
                 System.out.println("La contraseña es menor");
             } else {
