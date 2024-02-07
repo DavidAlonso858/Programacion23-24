@@ -1,18 +1,6 @@
 import java.util.Scanner;
 
 public class Ejercicio618 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String frase, camelCase;
-
-        System.out.print("Ingrese una frase: ");
-        frase = scanner.nextLine();
-
-        camelCase = convertirCamelCase(frase);
-
-        System.out.println("Frase en CamelCase: " + camelCase);
-
-    }
 
     public static String convertirCamelCase(String frase) {
         // Dividir la frase en palabras
@@ -37,5 +25,18 @@ public class Ejercicio618 {
         }
 
         return resultado;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String frase, camelCase;
+
+        System.out.print("Ingrese una frase: ");
+        frase = scanner.nextLine();
+
+        camelCase = convertirCamelCase(frase);
+
+        System.out.println("Frase en CamelCase: " + camelCase);
+
     }
 }
