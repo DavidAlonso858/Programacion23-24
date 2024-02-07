@@ -2,20 +2,6 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio614Agenda {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int opcion;
-        String[] nuevaAgenda = new String[0];
-
-        do {
-            opcion = menu(sc);
-            if (opcion != 4) {
-                nuevaAgenda = eleccion(sc, nuevaAgenda, opcion);
-
-            }
-        } while (opcion != 4);
-
-    }
 
     public static int menu(Scanner sc) {
         int opcion;
@@ -52,6 +38,7 @@ public class Ejercicio614Agenda {
                 mostrarContactos(nuevaAgenda);
                 return nuevaAgenda;
         }
+
         return nuevaAgenda;
     }
 
@@ -93,5 +80,20 @@ public class Ejercicio614Agenda {
             System.out.print(nuevaAgenda[i]);
         }
         System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        String[] nuevaAgenda = new String[0];
+
+        do {
+            opcion = menu(sc);
+            if (opcion != 4) {
+                nuevaAgenda = eleccion(sc, nuevaAgenda, opcion);
+
+            }
+        } while (opcion != 4);
+
     }
 }
