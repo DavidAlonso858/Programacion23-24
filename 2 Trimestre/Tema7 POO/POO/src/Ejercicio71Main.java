@@ -5,5 +5,7 @@ public class Ejercicio71Main {
         c1.ingresoDinero(1200);
         c1.sacarDinero(250);
         c1.mostrarCuenta();
+
+        System.out.println("Puedo sacar "+c1.sacarDinero(970));
     }
 }

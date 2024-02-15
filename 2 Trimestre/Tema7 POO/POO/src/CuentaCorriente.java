@@ -12,7 +12,7 @@ public class CuentaCorriente {
     public boolean sacarDinero(double dinero) {
         boolean retirarDinero;
 
-        if (dinero >= saldo) {
+        if (dinero <= saldo) {
             saldo -= dinero;
             retirarDinero = true;
         } else {
