@@ -6,6 +6,12 @@ public class Ejercicio71Main {
         c1.sacarDinero(250);
         c1.mostrarCuenta();
 
-        System.out.println("Puedo sacar "+c1.sacarDinero(970));
+        System.out.println("Puedo sacar " + c1.sacarDinero(970));
+
+        c1 = new CuentaCorriente("75923724B", 2000); // Constructor sobre cargado del 7.2
+        System.out.println();
+        c1.mostrarCuenta();
+        c1.setEntidadBancaria("Santander"); // le asigno el banco a la cuenta
+        c1.mostrarCuenta();
     }
 }
