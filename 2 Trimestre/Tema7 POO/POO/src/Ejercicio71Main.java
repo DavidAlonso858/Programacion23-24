@@ -13,5 +13,11 @@ public class Ejercicio71Main {
         c1.mostrarCuenta();
         c1.setEntidadBancaria("Santander"); // le asigno el banco a la cuenta
         c1.mostrarCuenta();
+
+        Gestor g1 = new Gestor("Juana", 606743223);
+
+        c1 = new CuentaCorriente("75923724B", "David", 100, g1);
+        c1.setEntidadBancaria("Caixa");
+        c1.mostrarCuenta();
     }
 }

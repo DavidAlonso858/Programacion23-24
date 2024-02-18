@@ -3,6 +3,7 @@ public class CuentaCorriente {
     public String nombre; // Ejercicio 7.3 visible por todos
     private double saldo; // Ejercicio 7.3 solo visible por la clase
     private static String entidadBancaria = "BBVA"; // estatico porque es igual para toda la cuenta
+    Gestor gestor;
 
     public void setEntidadBancaria(String entidadBancaria) { // asigna valor al atributo controlandolo
         this.entidadBancaria = entidadBancaria;
@@ -16,6 +17,17 @@ public class CuentaCorriente {
         this.nombre = nombre;
         this.DNI = DNI;
         saldo = 0;
+    }
+
+    public CuentaCorriente(String dNI, String nombre, double saldo, Gestor gestor) {
+        DNI = dNI;
+        this.nombre = nombre;
+        this.saldo = saldo;
+        this.gestor = gestor;
+    }
+
+    void setGestor(Gestor gestor) {
+        this.gestor = gestor;
     }
 
     public CuentaCorriente(String DNI, double saldo) { // Ejercicio 7.2 con DNI y saldo
@@ -47,10 +59,18 @@ public class CuentaCorriente {
     }
 
     public void mostrarCuenta() {
-        System.out.println("Banco " + entidadBancaria);
-        System.out.println("DNI: " + DNI);
-        System.out.println("Nombre propietario: " + nombre);
-        System.out.println("Saldo: " + saldo + " euros\n");
-        
+        if (gestor == null) {
+            System.out.println("No tiene gestor");
+            System.out.println("Banco " + entidadBancaria);
+            System.out.println("DNI: " + DNI);
+            System.out.println("Nombre propietario: " + nombre);
+            System.out.println("Saldo: " + saldo + " euros\n");
+        } else {
+            gestor.mostrarGestor();
+            System.out.println("Banco " + entidadBancaria);
+            System.out.println("DNI: " + DNI);
+            System.out.println("Nombre propietario: " + nombre);
+            System.out.println("Saldo: " + saldo + " euros\n");
+        }
     }
 }
