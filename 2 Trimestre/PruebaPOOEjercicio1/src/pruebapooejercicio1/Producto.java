@@ -34,4 +34,10 @@ public class Producto {
         return cantInventario;
     }
 
+    @Override
+    public String toString() {
+        return "Producto [nombreProducto=" + nombreProducto + ", descripcionProducto=" + descripcionProducto
+                + ", precio=" + precio + ", cantInventario=" + cantInventario + "]";
+    }
+
 }
