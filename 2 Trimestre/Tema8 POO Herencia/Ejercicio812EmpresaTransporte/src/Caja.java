@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class Caja {
     Scanner sc = new Scanner(System.in);
 
-    private int ancho;
-    private int alto;
-    private int fondo;
-    private Unidad unidad;
+    protected int ancho;
+    protected int alto;
+    protected int fondo;
+    protected Unidad unidad;
 
     public Caja(int ancho, int alto, int fondo, Unidad unidad) { // en cm
         this.ancho = ancho;
