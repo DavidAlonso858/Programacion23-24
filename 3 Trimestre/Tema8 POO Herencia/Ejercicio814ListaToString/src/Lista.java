@@ -48,8 +48,17 @@ public class Lista {
         return indice;
     }
 
+    public boolean equals(Lista l2) {
+        for (int i = 0; i < tabla.length; i++) {
+            if (!tabla[i].equals(l2.tabla[i])) { // compara los elementos en vez de la refe
+                return false;
+            }
+        }
+        return true;
+    }
+
     @Override
     public String toString() { // metodo toString en vez de mostrar
-        return "Lista [tabla= " + Arrays.toString(tabla) + "]";
+        return "Lista " + Arrays.toString(tabla) + "\n";
     }
 }
