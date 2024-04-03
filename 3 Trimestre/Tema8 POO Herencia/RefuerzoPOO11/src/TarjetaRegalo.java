@@ -10,7 +10,7 @@ public class TarjetaRegalo {
     public int aleatorio() {
         int num;
 
-        num = (int) (Math.random() * (100000 - 00001) + 00001);
+        num = (int) (Math.random() * (100000) + 10000);
 
         return num;
     }
