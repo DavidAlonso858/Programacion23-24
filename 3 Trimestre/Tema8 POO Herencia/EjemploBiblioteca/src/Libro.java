@@ -1,6 +1,7 @@
-public class Libro extends Publicacion {
+public class Libro extends Publicacion implements Prestable {
     private int numeroPaginas;
     private int capituloMuestra;
+    private boolean prestado = false;
 
     public Libro(String titulo, String autor, int añoPublicacion, String codigoISBN, int numeroPaginas,
             int capituloMuestra) {
@@ -15,6 +16,25 @@ public class Libro extends Publicacion {
 
     public void setNumeroPaginas(int numeroPaginas) {
         this.numeroPaginas = numeroPaginas;
+    }
+
+    @Override
+    public void devuelve() {
+        this.prestado = false;
+    }
+
+    @Override
+    public boolean estaPrestado() {
+        return this.prestado;
+    }
+
+    @Override
+    public void presta() {
+        if (this.prestado) {
+            System.out.println("Lo siento, ese libro ya esta prestado");
+        } else {
+            this.prestado = true;
+        }
     }
 
     public int getCapituloMuestra() {

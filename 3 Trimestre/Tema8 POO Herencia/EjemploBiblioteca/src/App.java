@@ -7,6 +7,8 @@ public class App {
         System.out.println(p1);
         System.out.println(l1);
         System.out.println(r1);
+
+        l1.presta();
     }
     
 }
