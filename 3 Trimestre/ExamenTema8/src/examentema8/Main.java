@@ -28,11 +28,16 @@ public class Main {
                     System.out.println(ej2);
                     break;
                 case 2:
-                    
+                    ej2.atacar(ej1);
                     System.out.println(ej1);
                     break;
+                case 3:
+                    ej1.atacar(ej2);
+                    System.out.println(ej2);
+                    break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("Fallo al introducir opcion");
+                    break;
             }
         } while (opcion != 0);
     }

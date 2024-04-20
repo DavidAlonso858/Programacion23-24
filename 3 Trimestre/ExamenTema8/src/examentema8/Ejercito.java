@@ -18,9 +18,32 @@ public class Ejercito extends Personaje {
 
     public void atacar(Ejercito ej) {
         int guerreroAle;
+        int dano;
+        boolean ejercitoVivo = false;
 
+        dano = (int) (Math.random() * (11));
         guerreroAle = (int) (Math.random() * (ej.ejercito.length - 1));
-        
+
+        System.out.println(dano);
+        System.out.println(guerreroAle);
+
+        int vida = ejercito[guerreroAle].getNivelVida() - dano;
+
+        ejercito[guerreroAle].setNivelVida(vida);
+
+        for (int i = 0; i < ejercito.length - 1 && !ejercitoVivo; i++) {
+            if (ejercito[i].getNivelVida() > 0) {
+                ejercitoVivo = true;
+            }
+        }
+
+        if (!ejercitoVivo) {
+            if (ejercito[ejercito.length - 1].getNivelVida() > 0) {
+                ejercito[ejercito.length - 1].setNivelVida(nivelVida - dano);
+            } else {
+                System.out.println("HAS GANADO");
+            }
+        }
     }
 
     @Override

@@ -10,6 +10,14 @@ public class Jefe extends Personaje {
         this.nivelVida = 20 + vidaExtra;
     }
 
+    public int getVidaExtra() {
+        return vidaExtra;
+    }
+
+    public void setVidaExtra(int vidaExtra) {
+        this.vidaExtra = vidaExtra;
+    }
+
     @Override
     public String toString() {
         String cadena = super.toString();
