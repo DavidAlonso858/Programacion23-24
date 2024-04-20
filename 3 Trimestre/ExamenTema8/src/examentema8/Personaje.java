@@ -30,7 +30,7 @@ public abstract class Personaje {
 
     @Override
     public String toString() {
-        return "Personaje " + "codigo-> " + codigo + ", nivelVida-> " + getNivelVida() + " Clase-> " + getClass();
+        return "Personaje " + "codigo-> " + codigo + ", nivelVida-> " + this.nivelVida + " Clase-> " + getClass();
     }
 
 }
