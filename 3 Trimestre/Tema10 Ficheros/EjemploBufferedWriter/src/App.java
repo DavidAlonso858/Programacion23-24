@@ -17,6 +17,6 @@ public class App {
 
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
-        }
+        } // no hace falta el finally ya
     }
 }
