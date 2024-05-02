@@ -19,6 +19,7 @@ public class App {
             linea = in.readLine();
             while (linea != null) {
                 out.write(linea);
+                System.out.println(linea);
                 out.newLine();
                 linea = in.readLine();
             }
