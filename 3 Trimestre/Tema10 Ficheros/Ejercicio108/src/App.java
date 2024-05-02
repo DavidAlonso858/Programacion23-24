@@ -14,8 +14,8 @@ public class App {
         original += ".txt";
         String copia = "copia_de_" + original;
 
-        try (BufferedReader in = new BufferedReader(new FileReader(original))) {
-            BufferedWriter out = new BufferedWriter(new FileWriter(copia));
+        try (BufferedReader in = new BufferedReader(new FileReader(original));
+                BufferedWriter out = new BufferedWriter(new FileWriter(copia))) {
             linea = in.readLine();
             while (linea != null) {
                 out.write(linea);
