@@ -10,7 +10,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         double valor;
 
-        System.out.print("Importante valor double a introducir: ");
+        System.out.print("\nImportante valor double a introducir: ");
         valor = sc.nextDouble();
 
         ValorDouble v = new ValorDouble(valor);
@@ -29,6 +29,7 @@ public class App {
             System.out.println(ex.getMessage());
         }
         
+        System.out.println(v.getValorDouble());
         sc.close();
     }
 }
