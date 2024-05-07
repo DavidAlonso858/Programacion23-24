@@ -56,6 +56,6 @@ public class App {
         }
         System.out.println(listaNegativa);
 
+        sc.close();
     }
-
 }
