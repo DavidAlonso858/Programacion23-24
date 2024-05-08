@@ -21,14 +21,22 @@ public class App {
         System.out.println(numerosAleatorios);
         System.out.println(numerosAleatorios.size());
 
-        Iterator<Integer> it = numerosAleatorios.iterator();
+        /*
+         * Iterator<Integer> it = numerosAleatorios.iterator();
+         * 
+         * while (it.hasNext()) {
+         * int n = it.next();
+         * if (n == 5) {
+         * it.remove();
+         * }
+         * }
+         */
 
-        while (it.hasNext()) {
-            int n = it.next();
-            if (n == 5) {
-                it.remove();
-            }
-        }
+        Collection<Integer> metodosGlobales = new LinkedList<>();
+
+        metodosGlobales.add(5);
+
+        numerosAleatorios.removeAll(metodosGlobales); // elimina todo lo que contiene esa coleccion (solo 5 aqui)
 
         System.out.println("LISTA SIN 5");
         System.out.println(numerosAleatorios);
