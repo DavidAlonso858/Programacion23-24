@@ -9,7 +9,6 @@ public class App {
         List<Integer> lista = new LinkedList<>();
 
         do {
-
             System.out.print("Introduzca entero positivo (negativo para salir): ");
             n = sc.nextInt();
 
@@ -20,8 +19,10 @@ public class App {
 
         for (int i = 0; i < lista.size(); i++) {
             if (lista.get(i) % 2 == 0) {
-                
+                Integer valorPar = lista.set(i, lista.get(i) * 100);
+                System.out.println("Valor par original: " + valorPar);
             }
         }
+        System.out.println("Lista con los valores pares * 100 " + lista);
     }
 }
