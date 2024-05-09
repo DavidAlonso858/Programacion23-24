@@ -18,10 +18,6 @@ public class Socio implements Serializable, Comparable<Socio> {
         this.fechaAlta = LocalDate.parse(fechaAlta, f);
     }
 
-    public Socio(String dni) {
-        this.dni = dni;
-    }
-
     @Override
     public int compareTo(Socio o) {
 

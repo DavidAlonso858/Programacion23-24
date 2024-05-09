@@ -27,6 +27,17 @@ public class App {
         return opcion;
     }
 
+    public static boolean baja(Set<Socio> conjuntoSocios, String dni) {
+        boolean eliminado = false;
+
+        for (Socio socio : conjuntoSocios) {
+            if (socio.getDni().equals(dni)) {
+                eliminado = conjuntoSocios.remove(socio);
+            }
+        }
+        return eliminado;
+    }
+
     public static boolean alta(Scanner sc, Set<Socio> conjuntoSocios) {
         String dni, nombre, fechaAlta;
         System.out.print("Introduzca DNI del nuevo socio: ");
@@ -83,14 +94,12 @@ public class App {
                     System.out.print("Introduzca el dni que quiere darse de baja: ");
                     dni = sc.next();
                     sc.nextLine();
-                    Socio s = new Socio(dni);
-                    conjuntoSocios.remove(s);
+                    baja(conjuntoSocios, dni);
                 }
                 case 3 -> {
                     System.out.print("Introduzca el dni del socio que quiere modificar: ");
                     dni = sc.nextLine();
-                    Socio s = new Socio(dni);
-                    conjuntoSocios.remove(s);
+                    baja(conjuntoSocios, dni);
 
                     modificacion(sc, conjuntoSocios);
                 }
