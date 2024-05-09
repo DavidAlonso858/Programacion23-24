@@ -1,4 +1,4 @@
-package ejercicio129propuesta;
+package ejercicio125propuesta;
 
 public class Clientes implements Comparable { // compareTo
     private String dni;
