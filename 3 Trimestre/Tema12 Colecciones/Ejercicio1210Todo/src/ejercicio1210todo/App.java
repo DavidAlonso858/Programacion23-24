@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -23,6 +25,7 @@ public class App {
 
         System.out.print("Introduzca la opcion deseada: ");
         opcion = sc.nextInt();
+        sc.nextLine(); // limpia para que introduzca los datos sin problema
 
         return opcion;
     }
@@ -41,8 +44,7 @@ public class App {
     public static boolean alta(Scanner sc, Set<Socio> conjuntoSocios) {
         String dni, nombre, fechaAlta;
         System.out.print("Introduzca DNI del nuevo socio: ");
-        dni = sc.next();
-        sc.nextLine();
+        dni = sc.nextLine();
 
         System.out.print("Introduzca NOMBRE del nuevo socio: ");
         nombre = sc.nextLine();
@@ -59,8 +61,7 @@ public class App {
         String dni, nombre, fechaAlta;
 
         System.out.print("Introduzca DNI del modificado: ");
-        dni = sc.next();
-        sc.nextLine();
+        dni = sc.nextLine();
 
         System.out.print("\nIntroduzca NOMBRE del modificado: ");
         nombre = sc.nextLine();
@@ -105,8 +106,8 @@ public class App {
                 }
                 case 4 -> System.out.println(conjuntoSocios);
                 case 5 -> { // orden de mas antiguo
-                    Set<Socio> ordenAntiguedad = new TreeSet<>((s1, s2) -> s2.antiguedad() - s1.antiguedad());
-                    ordenAntiguedad.addAll(conjuntoSocios);
+                    List<Socio> ordenAntiguedad = new ArrayList<>(conjuntoSocios);
+                    ordenAntiguedad.sort((s1, s2) -> s2.antiguedad() - s1.antiguedad());
                     System.out.println(ordenAntiguedad);
                 }
                 case 6 -> System.out.println("Espero que todo haya ido bien!");
