@@ -99,21 +99,16 @@ public class App {
         Set<Map.Entry<String, Socio>> ordenAño = club.entrySet();
 
         Iterator<Map.Entry<String, Socio>> it = ordenAño.iterator(); // iterator Map.Entry
+        List<Socio> listaOrdenAño = new LinkedList<>();
 
         while (it.hasNext()) {
             Map.Entry<String, Socio> mapEntry = it.next();
-            if (mapEntry.getValue().getFechaIngreso().getYear() > año) { // elimina para ordenar los anteriores a año
-                it.remove();
+            if (mapEntry.getValue().getFechaIngreso().getYear() < año) { // elimina para ordenar los anteriores a año
+                listaOrdenAño.add(mapEntry.getValue());
             }
         }
-
-        Collection<Socio> listaOrdenAño = club.values(); // pasa los valores de Mapa con lo eliminado
-        List<Socio> listaOrdenAñoFinal = new LinkedList<>(listaOrdenAño); // pasa a List para usar el sort
-
-        Collections.sort(listaOrdenAñoFinal,
-                (s1, s2) -> s1.getFechaIngreso().getYear() - s2.getFechaIngreso().getYear());
-
-        return listaOrdenAñoFinal;
+        Collections.sort(listaOrdenAño, (s1, s2) -> s2.antiguedad() - s1.antiguedad());
+        return listaOrdenAño;
     }
 
     public static void main(String[] args) {
@@ -152,7 +147,7 @@ public class App {
 
                 }
                 case 4 -> {
-                    System.out.println("Orden alfabetico -> " + club);
+                    System.out.println("Orden alfabetico -> \n" + club);
                 }
                 case 5 -> {
                     Collection<Socio> clubAntiguedad = club.values(); // pasa los valores de Mapa
@@ -161,13 +156,13 @@ public class App {
 
                     Collections.sort(listaClubAntiguedad, (s1, s2) -> s2.antiguedad() - s1.antiguedad());
                     // de mayor a menor
-                    System.out.println("Orden de antiguedad -> " + listaClubAntiguedad);
+                    System.out.println("Orden de antiguedad -> \n" + listaClubAntiguedad);
                 }
                 case 6 -> {
                     int año;
                     System.out.print("Hasta que año quiere la lista de socios: ");
                     año = sc.nextInt();
-                    System.out.println("Orden con alta anterior a " + año + "-> " + ordenAño(club, año));
+                    System.out.println("Orden con alta anterior a " + año + "-> \n" + ordenAño(club, año));
 
                 }
                 case 7 -> {

@@ -63,7 +63,7 @@ public class Socio implements Serializable {
     @Override
     public String toString() {
         DateTimeFormatter f = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
-        return " Socio [apodo-> " + apodo + ", nombre->" + nombre + ", fechaIngreso->" + f.format(fechaIngreso) + " ]";
+        return "Socio [apodo-> " + apodo + ", nombre->" + nombre + ", fechaIngreso->" + f.format(fechaIngreso) + "]\n";
     }
 
 }
