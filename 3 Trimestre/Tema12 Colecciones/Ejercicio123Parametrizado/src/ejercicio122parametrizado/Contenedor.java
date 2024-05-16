@@ -11,7 +11,45 @@ public class Contenedor<T extends Comparable<T>> {
     }
 
     public void insertarAlPrincipio(T nuevo) {
-        
+        tablaObjetos = Arrays.copyOf(tablaObjetos, tablaObjetos.length + 1);
+        System.arraycopy(tablaObjetos, 0, tablaObjetos, 1, tablaObjetos.length - 1); // al sumarle uno le pasamos todo para dejar el primero vacio
+
+        tablaObjetos[0] = nuevo;
+    }
+
+    public void insertarAlFinal(T nuevo) {
+        tablaObjetos = Arrays.copyOf(tablaObjetos, tablaObjetos.length + 1);
+
+        tablaObjetos[tablaObjetos.length - 1] = nuevo;
+    }
+
+    public T extraerDelPrincipio() {
+        T extraer = null;
+
+        if (tablaObjetos.length < 0) {
+            System.out.println("Esta vacia la tabla");
+        } else {
+            extraer = tablaObjetos[0];
+            System.arraycopy(tablaObjetos, 1, tablaObjetos, 0, tablaObjetos.length - 1);
+            tablaObjetos = Arrays.copyOf(tablaObjetos, tablaObjetos.length - 1);
+        }
+        return extraer;
+    }
+
+    public T extraerDelFinal() {
+        T extraer = null;
+
+        if (tablaObjetos.length < 0) {
+            System.out.println("Esta vacia la tabla");
+        } else {
+            extraer = tablaObjetos[tablaObjetos.length - 1];
+            tablaObjetos = Arrays.copyOf(tablaObjetos, tablaObjetos.length - 1);
+        }
+        return extraer;
+    }
+
+    public void ordenar() {
+        Arrays.sort(tablaObjetos);
     }
 
     @Override
