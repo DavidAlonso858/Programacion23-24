@@ -5,6 +5,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -114,13 +116,17 @@ public class App {
     public static void main(String[] args) {
         int opcion;
         // Las claves en los mapas son unicas
-        Map<String, Socio> club = new TreeMap<>(); // TreeMap orden clave sin necesidad de compareTo
+        Map<String, Socio> club = null; // TreeMap orden clave sin necesidad de compareTo
 
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("club.dat"))) {
-            club = (TreeMap<String, Socio>) in.readObject(); // se castea el tipo para leer
+        if (Files.exists(Paths.get("club.dat"))) {
+            try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("club.dat"))) {
+                club = (TreeMap<String, Socio>) in.readObject(); // se castea el tipo para leer
 
-        } catch (IOException | ClassNotFoundException ex) {
-            System.out.println(ex.getMessage());
+            } catch (IOException | ClassNotFoundException ex) {
+                System.out.println(ex.getMessage());
+            }
+        } else {
+            club = new TreeMap<>();
         }
 
         do {
