@@ -21,7 +21,7 @@ public class Jefe extends Personaje {
     @Override
     public String toString() {
         String cadena = super.toString(); // lo paso a cadena para almacenar el dato nuevo
-        cadena += "vida extra-> " + this.vidaExtra;
+        cadena += "vida extra-> " + this.vidaExtra ;
 
         return cadena;
     }
