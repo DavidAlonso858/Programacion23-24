@@ -1,6 +1,10 @@
 package ejercicio122parametrizado;
 
+import java.util.Scanner;
+
 public class App {
+
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         Contenedor<Integer> c = new Contenedor<>(new Integer[0]);
@@ -24,5 +28,16 @@ public class App {
         System.out.println(n2);
 
         System.out.println("Despuede de la extracion: " + c);
+
+        System.out.println("Introduzca numeros positivos (-1 para salir)");
+        Integer cola = sc.nextInt();
+
+        while (cola >= 0) {
+            c.encolar(cola);
+        }
+
+        do {
+            System.out.println(c.desencolar());
+        } while (c.desencolar() != null);
     }
 }
