@@ -1,6 +1,8 @@
 package prueba1;
 
-public class Guerrero extends Personaje {
+import java.io.Serializable;
+
+public class Guerrero extends Personaje implements Serializable{
 
     public Guerrero() {
         nivelVida = 15; // al ser protected no hace falta declaralo aqui

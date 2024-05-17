@@ -1,6 +1,8 @@
 package prueba1;
 
-public abstract class Personaje {
+import java.io.Serializable;
+
+public abstract class Personaje implements Serializable {
 
     protected String codigo; //protected si heredan
     protected Integer nivelVida; //protected si heredan

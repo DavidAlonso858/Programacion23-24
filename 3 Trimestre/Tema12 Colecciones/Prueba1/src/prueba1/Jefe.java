@@ -1,6 +1,8 @@
 package prueba1;
 
-public class Jefe extends Personaje {
+import java.io.Serializable;
+
+public class Jefe extends Personaje implements Serializable {
 
     private Integer vidaExtra;
 
