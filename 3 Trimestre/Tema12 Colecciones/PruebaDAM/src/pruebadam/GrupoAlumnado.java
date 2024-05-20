@@ -8,11 +8,13 @@ public class GrupoAlumnado {
     List<Alumnado> listaAlumnado = new ArrayList<>();
 
     public boolean inscribirAlumno(Alumnado alumnado) {
-        if (listaAlumnado.contains(alumnado)) {
-            return false;
-        } else {
-            return listaAlumnado.add(alumnado);
+        boolean introducido = false;
+
+        if (!listaAlumnado.contains(alumnado)) {
+            introducido = listaAlumnado.add(alumnado);
         }
+
+        return introducido;
     }
 
     public boolean eliminarAlumnado(Alumnado alumnado) {
@@ -21,12 +23,13 @@ public class GrupoAlumnado {
 
     public boolean insertarNotaAlumnado(Integer nie, NotaAlumnado nota) {
         Alumnado a1 = encontrarPorNie(nie);
+        boolean introducido = false;
 
         if (a1 != null) {
-            return nota.introducirNota(nie, nota);
-        } else {
-            return false;
+            introducido = nota.introducirNota(nie, nota);
         }
+
+        return introducido;
     }
 
     public Alumnado encontrarPorNie(Integer nie) {

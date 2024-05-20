@@ -14,7 +14,7 @@ public class NotaAlumnado {
 
     private LocalDate fecha;
     private double valorGuardar;
-    private static Map<Integer, NotaAlumnado> mapaNotas = new TreeMap<>();
+    private static Map<Integer, Set<NotaAlumnado>> mapaNotas = new TreeMap<>();
 
     public NotaAlumnado(String fecha, double valorGuardar) {
         this.valorGuardar = valorGuardar;
@@ -28,13 +28,12 @@ public class NotaAlumnado {
     }
 
     public static boolean introducirNota(Integer nie, NotaAlumnado n) {
-        boolean introducido = true;
+        boolean introducido = false;
 
-        if (mapaNotas.containsValue(n)) {
-            introducido = false;
-        } else {
-            mapaNotas.put(nie, n);
+        if (!mapaNotas.get(nie).contains(n)) {
+            introducido = mapaNotas.get(nie).add(n);
         }
+
         return introducido;
     }
 
@@ -50,18 +49,14 @@ public class NotaAlumnado {
     }
 
     public static Iterator<NotaAlumnado> notasAlumnado(Integer nie) {
-        NotaAlumnado n1 = mapaNotas.get(nie);
-        List<NotaAlumnado> listaNotas = new ArrayList<>();
-        // pasado a lista para poder usar el iterador
-        listaNotas.add(n1);
-
-        if (listaNotas.isEmpty()) {
+        if (!mapaNotas.containsKey(nie)) {
             return null;
         } else {
-            Iterator< NotaAlumnado> iteradorNotas = listaNotas.iterator();
-            return iteradorNotas;
-        }
+            Set<NotaAlumnado> setRecorrer = mapaNotas.get(nie);
+            Iterator<NotaAlumnado> it = setRecorrer.iterator();
 
+            return it;
+        }
     }
 
     @Override
@@ -84,7 +79,7 @@ public class NotaAlumnado {
         return valorGuardar;
     }
 
-    public static Map<Integer, NotaAlumnado> getMapaNotas() {
+    public static Map<Integer, Set<NotaAlumnado>> getMapaNotas() {
         return mapaNotas;
     }
 
