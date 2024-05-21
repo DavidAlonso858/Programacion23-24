@@ -15,7 +15,7 @@ public class App {
             System.out.println("3. Introducir una multa de un policia de la comisaria");
             System.out.println("4. Indicar el total de multas");
             System.out.println("5. Mostrar informacion (sin multas) de todos los policias de la comisaria ordenados por nombre");
-            System.out.println("6. Mostrar Informacion (con multas de todos los policias de la comisaria ordenados por codigo");
+            System.out.println("6. Mostrar Informacion (con multas) de todos los policias de la comisaria ordenados por codigo");
             System.out.println("7. Actualizar el sueldo de un policia de transito");
             System.out.println("0. Salir");
 
@@ -82,7 +82,7 @@ public class App {
                     codigo = sc.nextLine();
 
                     for (Policia p : comisariaPoli.listaPolicia) {
-                        if (p.codigo.equals(codigo)) {
+                        if (p.getCodigo().equals(codigo)) {
                             boolean eliminado = comisariaPoli.eliminarPolicia(p);
                             System.out.println(eliminado);
                             if (eliminado && p instanceof PoliciaTransito) {
@@ -109,7 +109,7 @@ public class App {
                     System.out.println(comisariaPoli.toStringPoliciasOrdenadoPorNombre());
                 }
                 case 6 -> {
-
+                    System.out.println(comisariaPoli.toStringPoliciasYMultasOrdenadoPorCodigo());    
                 }
                 case 7 -> {
                     String codigo;

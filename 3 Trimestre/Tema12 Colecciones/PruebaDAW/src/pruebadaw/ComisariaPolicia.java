@@ -2,6 +2,7 @@ package pruebadaw;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class ComisariaPolicia {
@@ -50,15 +51,24 @@ public class ComisariaPolicia {
 
     public String toStringPoliciasYMultasOrdenadoPorCodigo() {
         String lista = "";
-        Collections.sort(listaPolicia, (c1, c2) -> c1.codigo.compareTo(c2.codigo));
+        Collections.sort(listaPolicia, (c1, c2) -> c1.getCodigo().compareTo(c2.getCodigo()));
 
-        lista = "Comisaria Policia ordenada por codigo: " + listaPolicia;
+        for (Policia p : listaPolicia) {
+            lista += p + "\n";
+            if (p instanceof PoliciaTransito) {
+                Iterator<Multa> it = Multa.multasPolicia(p.getCodigo());
+                while (it.hasNext()) {
+                    Multa m = it.next();
+                    lista += m + "\n";
+                }
+            }
+        }
         return lista;
     }
 
     public String toStringPoliciasOrdenadoPorNombre() {
         String lista = "";
-        Collections.sort(listaPolicia, (c1, c2) -> c1.nombre.compareTo(c2.nombre));
+        Collections.sort(listaPolicia, (c1, c2) -> c1.getNombre().compareTo(c2.getNombre()));
 
         lista = "Comisaria Policia ordenada por codigo: " + listaPolicia;
         return lista;

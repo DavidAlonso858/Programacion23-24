@@ -2,10 +2,10 @@ package pruebadaw;
 
 public class JefePolicia extends Policia {
 
-    public JefePolicia(String nombre) {
-        super(nombre);
-        this.codigo = "J-" + contador;
-        this.sueldo += 1000;
-    }
+    private static Integer contador = 1;
 
+    public JefePolicia(String nombre) {
+        super("J-" + Integer.toString(contador), nombre, 2750);
+        contador++;
+    }
 }

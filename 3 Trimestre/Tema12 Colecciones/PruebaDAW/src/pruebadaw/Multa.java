@@ -2,6 +2,7 @@ package pruebadaw;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -59,15 +60,15 @@ public class Multa {
     }
 
     public static boolean introducirMulta(String codigo, Multa m) {
-        Collection<Set<Multa>> c = mapaMultas.values();
-        boolean introducido = true;
-        
-        if (c.contains(m)) {
-            introducido = false;
+        boolean introducido;
+
+        if (mapaMultas.get(codigo) == null) {
+            mapaMultas.put(codigo, new HashSet<>());
+            introducido = mapaMultas.get(codigo).add(m);
         } else {
-            mapaMultas.get(codigo).add(m);
+            introducido = mapaMultas.get(codigo).add(m);
         }
-        
+
         return introducido;
     }
 
@@ -102,5 +103,10 @@ public class Multa {
             return it;
 
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Multa{ codigoMulta-> " + codigoMulta + ", importeMulta-> " + importeMulta + '}';
     }
 }

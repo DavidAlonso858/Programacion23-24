@@ -2,17 +2,15 @@ package pruebadaw;
 
 public abstract class Policia implements Comparable<Policia> {
 
-    protected String codigo;
-    protected String nombre;
-    protected double sueldo;
+    private String codigo;
+    private String nombre;
+    private double sueldo;
     protected static Integer contador = 0;
 
-    public Policia(String nombre) {
-        this.codigo = "" + contador;
+    public Policia(String codigo, String nombre, double sueldo) {
+        this.codigo = codigo;
         this.nombre = nombre;
-        this.sueldo = 1750;
-        contador++;
-
+        this.sueldo = sueldo;
     }
 
     public String getCodigo() {
