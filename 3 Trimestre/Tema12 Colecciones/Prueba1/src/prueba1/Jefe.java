@@ -5,11 +5,13 @@ import java.io.Serializable;
 public class Jefe extends Personaje implements Serializable {
 
     private Integer vidaExtra;
+    private String cod;
 
     public Jefe() {
-        nivelVida = 20;
-        codigo = "1" + contador;
-        vidaExtra = (int) Integer.parseInt(codigo) / 2;
+        this.setNivelVida(20);;
+        cod = "1" + this.getContador();
+        this.setCodigo(cod);
+        vidaExtra = (int) Integer.parseInt(this.getCodigo()) / 2;
     }
 
     public Integer getVidaExtra() {
@@ -23,7 +25,7 @@ public class Jefe extends Personaje implements Serializable {
     @Override
     public String toString() {
         String cadena = super.toString(); // lo paso a cadena para almacenar el dato nuevo
-        cadena += "vida extra-> " + this.vidaExtra ;
+        cadena += "vida extra-> " + this.vidaExtra;
 
         return cadena;
     }

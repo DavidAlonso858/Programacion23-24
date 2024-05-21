@@ -4,14 +4,22 @@ import java.io.Serializable;
 
 public abstract class Personaje implements Serializable {
 
-    protected String codigo; //protected si heredan
-    protected Integer nivelVida; //protected si heredan
-    protected static Integer contador = 0; //protected si heredan
+    private String codigo; //protected si heredan
+    private Integer nivelVida; //protected si heredan
+    private static Integer contador = 0; //protected si heredan
 
     public Personaje() {
         this.codigo = codigo;
         this.nivelVida = nivelVida;
         contador++;
+    }
+
+    public static Integer getContador() {
+        return contador;
+    }
+
+    public static void setContador(Integer contador) {
+        Personaje.contador = contador;
     }
 
     public String getCodigo() {
@@ -32,6 +40,6 @@ public abstract class Personaje implements Serializable {
 
     @Override
     public String toString() {
-        return "Personaje{" + "codigo-> " + codigo + ", nivelVida-> " + nivelVida + " clase-> " + getClass() + "}\n";
+        return "Personaje{" + "codigo-> " + codigo + ", nivelVida-> " + nivelVida + " clase-> " + getClass().getSimpleName() + "}\n";
     }
 }
