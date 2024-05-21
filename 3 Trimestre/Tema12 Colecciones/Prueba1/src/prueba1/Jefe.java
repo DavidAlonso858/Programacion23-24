@@ -5,13 +5,12 @@ import java.io.Serializable;
 public class Jefe extends Personaje implements Serializable {
 
     private Integer vidaExtra;
-    private String cod;
+    private static Integer contador = 1;
 
     public Jefe() {
-        this.setNivelVida(20);;
-        cod = "1" + this.getContador();
-        this.setCodigo(cod);
-        vidaExtra = (int) Integer.parseInt(this.getCodigo()) / 2;
+        super("1" + Integer.toString(contador), 20);
+        this.vidaExtra = Integer.parseInt("1" + contador) / 2;
+        contador++;
     }
 
     public Integer getVidaExtra() {

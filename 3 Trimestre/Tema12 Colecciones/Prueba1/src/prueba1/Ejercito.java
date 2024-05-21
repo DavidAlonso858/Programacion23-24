@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Ejercito extends Personaje implements Serializable{
+public class Ejercito implements Serializable{
 
     private Integer numAleatorio;
     private List<Personaje> ej;

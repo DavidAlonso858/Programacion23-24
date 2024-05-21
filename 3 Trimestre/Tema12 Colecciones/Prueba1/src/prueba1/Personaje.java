@@ -6,20 +6,10 @@ public abstract class Personaje implements Serializable {
 
     private String codigo; //protected si heredan
     private Integer nivelVida; //protected si heredan
-    private static Integer contador = 0; //protected si heredan
 
-    public Personaje() {
+    public Personaje(String codigo, Integer nivelVida) {
         this.codigo = codigo;
         this.nivelVida = nivelVida;
-        contador++;
-    }
-
-    public static Integer getContador() {
-        return contador;
-    }
-
-    public static void setContador(Integer contador) {
-        Personaje.contador = contador;
     }
 
     public String getCodigo() {
