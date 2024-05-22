@@ -2,6 +2,7 @@ package pruebadam;
 
 import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
 
 public class App {
 
@@ -139,11 +140,13 @@ public class App {
                     Alumnado a1 = g1.encontrarPorNie(nie);
 
                     if (a1 != null) {
-
-                        Iterator<NotaAlumnado> it = n1.notasAlumnado(nie);
-                        while (it.hasNext()) {
-                            NotaAlumnado nota = it.next();
-                            System.out.println(nota.getValorGuardar());
+                        Set<Integer> conjuntoNota = n1.codigosAlumnos();
+                        if (conjuntoNota.contains(a1.getNIE())) {
+                            Iterator<NotaAlumnado> it = n1.notasAlumnado(nie);
+                            while (it.hasNext()) {
+                                NotaAlumnado nota = it.next();
+                                System.out.println(nota.getValorGuardar());
+                            }
                         }
                     } else {
                         System.out.println("No esta ese alumno en el grupo");
