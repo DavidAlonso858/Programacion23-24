@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class ComisariaPolicia {
 
@@ -52,10 +53,11 @@ public class ComisariaPolicia {
     public String toStringPoliciasYMultasOrdenadoPorCodigo() {
         String lista = "";
         Collections.sort(listaPolicia, (c1, c2) -> c1.getCodigo().compareTo(c2.getCodigo()));
-
+        Set<String> listaPoliciasConMultas = Multa.policiasConMulta();
+        
         for (Policia p : listaPolicia) {
             lista += p + "\n";
-            if (p instanceof PoliciaTransito) {
+            if (listaPoliciasConMultas.contains(p.getCodigo())) {
                 Iterator<Multa> it = Multa.multasPolicia(p.getCodigo());
                 while (it.hasNext()) {
                     Multa m = it.next();
