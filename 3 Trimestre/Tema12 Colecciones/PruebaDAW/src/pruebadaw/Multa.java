@@ -62,7 +62,7 @@ public class Multa {
     public static boolean introducirMulta(String codigo, Multa m) {
         boolean introducido;
 
-        if (mapaMultas.get(codigo) == null) {
+        if (!mapaMultas.containsKey(codigo)) {
             mapaMultas.put(codigo, new HashSet<>());
             introducido = mapaMultas.get(codigo).add(m);
         } else {

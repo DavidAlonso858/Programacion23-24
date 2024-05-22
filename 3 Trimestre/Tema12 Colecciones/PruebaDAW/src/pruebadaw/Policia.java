@@ -5,7 +5,6 @@ public abstract class Policia implements Comparable<Policia> {
     private String codigo;
     private String nombre;
     private double sueldo;
-    protected static Integer contador = 0;
 
     public Policia(String codigo, String nombre, double sueldo) {
         this.codigo = codigo;

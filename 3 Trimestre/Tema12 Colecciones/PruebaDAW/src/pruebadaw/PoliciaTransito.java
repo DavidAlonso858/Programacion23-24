@@ -13,14 +13,14 @@ public class PoliciaTransito extends Policia {
 
     public double actualizarSueldo() {
         Double sumaImporte = 0.0;
-        Iterator<Multa> it = Multa.multasPolicia(super.getCodigo()); // acordarse super
+        Iterator<Multa> it = Multa.multasPolicia(this.getCodigo()); // acordarse super
         while (it.hasNext()) {
             Multa m = it.next();
             sumaImporte += m.getImporteMulta();
         }
 
-        Double sueldoNuevo = super.getSueldo() + 0.10 * sumaImporte;
-        super.setSueldo(sueldoNuevo);
-        return super.getSueldo();
+        Double sueldoNuevo = this.getSueldo() + 0.10 * sumaImporte;
+        this.setSueldo(sueldoNuevo);
+        return this.getSueldo();
     }
 }
