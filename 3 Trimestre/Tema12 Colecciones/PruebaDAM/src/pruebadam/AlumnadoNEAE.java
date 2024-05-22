@@ -10,7 +10,6 @@ public class AlumnadoNEAE extends Alumnado implements Calculable {
 
     public AlumnadoNEAE(String nombre, double coeficienteCalificacion) {
         super(nombre);
-        this.NIE = NIE;
         while (coeficienteCalificacion <= 1 || coeficienteCalificacion >= 2) {
             System.out.print("Error. Vuelve a introducir el coeficiente (1.0-2.0: ");
             coeficienteCalificacion = sc.nextDouble();
@@ -38,7 +37,10 @@ public class AlumnadoNEAE extends Alumnado implements Calculable {
 
     @Override
     public String toString() {
-        return "AlumnadoNEAE{ NIE->" + NIE + ", " + "Nombre-> " + nombre + ", " + "coeficienteCalificacion-> " + coeficienteCalificacion + '}';
+        String cadena = super.toString();
+        cadena += " Coeficiente Calificacion -> " + coeficienteCalificacion;
+
+        return cadena;
     }
 
 }

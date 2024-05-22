@@ -1,12 +1,10 @@
 package pruebadam;
 
-import java.util.Objects;
-
 public class Alumnado {
 
-    protected Integer NIE;
-    protected static Integer contador = 1;
-    protected String nombre;
+    private Integer NIE;
+    private static Integer contador = 1;
+    private String nombre;
 
     public Alumnado(String nombre) {
         this.NIE = contador;

@@ -35,7 +35,7 @@ public class GrupoAlumnado {
     public Alumnado encontrarPorNie(Integer nie) {
 
         for (Alumnado alumnado : listaAlumnado) {
-            if (alumnado.NIE.equals(nie)) {
+            if (alumnado.getNIE().equals(nie)) {
                 return alumnado;
             }
         }

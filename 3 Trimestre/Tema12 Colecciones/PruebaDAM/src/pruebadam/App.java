@@ -151,7 +151,7 @@ public class App {
                 }
                 case 6 -> {
                     for (Alumnado al : g1.listaAlumnado) {
-                        if (al instanceof AlumnadoNEAE && n1.getMapaNotas().get(al.getNIE()) != null) {
+                        if (al instanceof AlumnadoNEAE && NotaAlumnado.getMapaNotas().get(al.getNIE()) != null) {
                             System.out.println(al.getNombre());
                         }
                     }

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +31,10 @@ public class NotaAlumnado {
     public static boolean introducirNota(Integer nie, NotaAlumnado n) {
         boolean introducido = false;
 
-        if (!mapaNotas.get(nie).contains(n)) {
+        if (!mapaNotas.containsKey(nie)) {
+            mapaNotas.put(nie, new HashSet<>());
+            introducido = mapaNotas.get(nie).add(n);
+        } else {
             introducido = mapaNotas.get(nie).add(n);
         }
 
