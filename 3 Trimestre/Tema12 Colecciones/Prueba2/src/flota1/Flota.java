@@ -1,7 +1,7 @@
-package Flota;
+package flota1;
 
-import Embarcaciones.Barco;
-import Embarcaciones.Submarino;
+import embarcaciones1.Barco;
+import embarcaciones1.Submarino;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -60,7 +60,4 @@ public class Flota {
         return listaFlota;
     }
 
-    public Set<Barco> getConjuntoFlota() {
-        return conjuntoFlota;
-    }
 }

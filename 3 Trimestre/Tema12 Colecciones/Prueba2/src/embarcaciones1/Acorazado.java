@@ -1,4 +1,4 @@
-package Embarcaciones;
+package embarcaciones1;
 
 public class Acorazado extends Barco {
 
@@ -7,7 +7,11 @@ public class Acorazado extends Barco {
 
     public Acorazado(Double longitud, Integer numCa) {
         super("Ac-" + Integer.toString(contador), longitud);
-        this.numCa = numCa;
+        if (numCa > 0) {
+            this.numCa = numCa;
+        } else {
+            this.numCa = 0;
+        }
         contador++;
     }
 

@@ -1,9 +1,9 @@
-package Aplicacion;
+package aplicacion1;
 
-import Embarcaciones.Acorazado;
-import Embarcaciones.Barco;
-import Embarcaciones.Submarino;
-import Flota.Flota;
+import embarcaciones1.Acorazado;
+import embarcaciones1.Barco;
+import embarcaciones1.Submarino;
+import flota1.Flota;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -96,7 +96,7 @@ public class App {
                     System.out.println(f1.numeroBarcos());
                 }
                 case 4 -> {
-                    System.out.println(f1.getConjuntoFlota());
+                    System.out.println(f1.listadoBarcos());
                 }
                 case 5 -> {
                     List<Barco> l = f1.listadoBarcos();

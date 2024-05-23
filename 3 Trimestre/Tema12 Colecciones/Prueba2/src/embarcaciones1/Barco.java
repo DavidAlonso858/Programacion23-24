@@ -1,4 +1,6 @@
-package Embarcaciones;
+package embarcaciones1;
+
+import java.util.Objects;
 
 public abstract class Barco {
 
@@ -27,14 +29,30 @@ public abstract class Barco {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 71 * hash + Objects.hashCode(this.longitud);
+        return hash;
+    }
+
+    @Override
     public boolean equals(Object obj) {
-        Barco b = (Barco) obj;
-        return this.longitud.equals(b.longitud);
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Barco other = (Barco) obj;
+        return Objects.equals(this.longitud, other.longitud);
     }
 
     @Override
     public String toString() {
-        return "Barco{ codigo-> " + codigo + ", longitud-> " + longitud + "Clase-> " + getClass().getSimpleName() + '}';
+        return this.getClass().getSimpleName() + "{ codigo-> " + codigo + ", longitud-> " + longitud + '}';
     }
 
 }

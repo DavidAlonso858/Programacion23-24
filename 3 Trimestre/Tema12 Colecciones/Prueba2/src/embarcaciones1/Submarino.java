@@ -1,4 +1,4 @@
-package Embarcaciones;
+package embarcaciones1;
 
 public class Submarino extends Barco {
 
@@ -6,15 +6,11 @@ public class Submarino extends Barco {
 
     public Submarino(Double longitud) {
         super("Sub-" + Integer.toString(contador), longitud);
+        contador++;
     }
 
     public Double getPeriscopio() {
         return longitud / 10;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 
 }
